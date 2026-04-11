@@ -53,7 +53,29 @@ h4 {
 p {
   color: var(--muted);
 }
+/* =========================
+   Navbar Design Tokens
+========================= */
 
+:root {
+  /* Navbar */
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-border: rgba(0, 0, 0, 0.06);
+
+  /* Text */
+  --nav-text: #111111;
+  --nav-text-muted: #6b7280;
+
+  /* Brand */
+  --nav-brand: var(--text);
+
+  /* Hover */
+  --nav-hover: var(--primary);
+
+  /* CTA */
+  --nav-cta-bg: var(--primary);
+  --nav-cta-text: #ffffff;
+}
 /* =========================
    Typography System
 ========================= */
