@@ -25,7 +25,7 @@ export const heroConfig: HeroConfig = {
 
   images: [
     {
-      src: "/assets/pista.png",
+      src: "/assets/bedam-pista.png",
       alt: "Badam and pista burfi squares with nut garnish",
     },
     {
