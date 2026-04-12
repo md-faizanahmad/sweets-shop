@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
@@ -8,15 +9,29 @@ import { motion } from "framer-motion";
 import { NAV_LINKS } from "@/@types/nav";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b backdrop-blur-md transition-all duration-300"
+      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
+        isScrolled
+          ? "py-3 backdrop-blur-md border-b"
+          : "py-5 bg-transparent border-transparent"
+      }`}
       style={{
-        backgroundColor: "var(--nav-bg)",
-        borderColor: "var(--nav-border)",
+        backgroundColor: isScrolled ? "var(--nav-bg)" : "transparent",
+        borderColor: isScrolled ? "var(--nav-border)" : "transparent",
       }}
     >
-      <nav className="container mx-auto flex h-16 items-center justify-between px-4">
+      <nav className="container mx-auto flex items-center justify-between px-6">
         {/* Logo Section */}
         <Link
           href="/"
@@ -28,36 +43,36 @@ export default function Navbar() {
               alt="SweetShop Logo"
               width={32}
               height={32}
-              className="object-contain rounded-full"
+              className="object-contain rounded-full bg-white/20"
               priority
             />
           </div>
           <span
             className="text-xl font-bold tracking-tight transition-colors duration-300"
-            style={{ color: "var(--nav-text)" }}
+            style={{ color: isScrolled ? "var(--nav-text)" : "#4c4a4a" }}
           >
             Sweet<span style={{ color: "var(--nav-hover)" }}>Shop</span>
           </span>
         </Link>
 
-        {/* Desktop Nav - Using Tailwind for smooth color switching */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-7">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-semibold transition-all duration-300 ease-in-out hover:opacity-100 opacity-80"
+                  className="text-sm font-bold tracking-wide transition-all duration-300 uppercase opacity-90 hover:opacity-100"
                   style={{
-                    color: "var(--nav-text-muted)",
-                    // Using a CSS hover hook in style is tricky, so we use a utility class
-                    // that targets the variable in your globals.css
+                    color: isScrolled ? "var(--nav-text-muted)" : "#4c4a4a",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.color = "var(--nav-hover)")
                   }
                   onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "var(--nav-text-muted)")
+                    (e.currentTarget.style.color = isScrolled
+                      ? "var(--nav-text-muted)"
+                      : "#4c4a4a")
                   }
                 >
                   {link.label}
@@ -66,21 +81,20 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* WhatsApp CTA - Retaining Framer for the "Premium" feel */}
           <motion.a
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
             href="https://wa.me/919999999999"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-bold shadow-sm transition-all duration-300 hover:shadow-md"
+            className="inline-flex items-center gap-2 rounded-full px-6 py-2 text-xs font-black uppercase tracking-widest shadow-lg transition-all duration-300"
             style={{
               backgroundColor: "var(--nav-cta-bg)",
               color: "var(--nav-cta-text)",
             }}
           >
             <MessageCircle className="h-4 w-4" />
-            Order Now
+            Order
           </motion.a>
         </div>
 
