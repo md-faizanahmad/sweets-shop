@@ -78,6 +78,29 @@ p {
   --nav-cta-bg: var(--primary);
   --nav-cta-text: #ffffff;
 }
+
+/* =========================
+   Footer Design Tokens (Light Haven)
+   ========================= */
+
+:root {
+  /* Background */
+  --footer-bg: #ffffff;
+  --footer-bg-subtle: #faf9f6; /* Matches Hero background */
+  --footer-border: rgba(0, 0, 0, 0.06);
+
+  /* Text */
+  --footer-title: #111111;
+  --footer-text: #4b5563;
+  --footer-muted: #9ca3af;
+
+  /* Links */
+  --footer-link: #374151;
+  --footer-link-hover: var(--primary);
+
+  /* Highlight */
+  --footer-accent: var(--primary);
+}
 /* =========================
    Typography System
 ========================= */
