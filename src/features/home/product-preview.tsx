@@ -89,7 +89,7 @@ export function ProductsPreview() {
             Don&apos;t see your favorite?
             <a
               href="#contact"
-              className="ml-2 underline transition-colors hover:text-[var(--nav-hover)]"
+              className="ml-2 underline transition-colors hover:text-(--nav-hover)"
               style={{ color: "var(--nav-text)" }}
             >
               Ask us on WhatsApp

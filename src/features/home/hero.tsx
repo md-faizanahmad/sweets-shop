@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { heroConfig } from "./hero/hero.config";
+import { heroConfig } from "./config/hero.config";
 import { HeroClient } from "./hero/HeroClient";
 
 export default function Hero() {

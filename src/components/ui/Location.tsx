@@ -13,21 +13,21 @@ export function Location() {
           {/* Header - Compact */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
             <div className="space-y-1">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--footer-accent)]">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-(--footer-accent)">
                 Our Boutique
               </span>
               <h2 className="text-2xl font-black text-neutral-900 tracking-tight">
                 Visit the Haven
               </h2>
             </div>
-            <p className="text-xs font-medium text-neutral-500 max-w-[240px]">
+            <p className="text-xs font-medium text-neutral-500 max-w-60">
               Find us in the heart of the city for fresh, daily-made traditional
               treats.
             </p>
           </div>
 
           {/* Compact Unified Card */}
-          <div className="relative group overflow-hidden rounded-[32px] bg-white border border-neutral-100 shadow-xl shadow-neutral-200/50">
+          <div className="relative group overflow-hidden rounded-4xl bg-white border border-neutral-100 shadow-xl shadow-neutral-200/50">
             <div className="flex flex-col md:flex-row">
               {/* Map - Smaller & Interactive */}
               <div className="w-full md:w-1/2 h-52 md:h-64 relative overflow-hidden grayscale-[0.5] contrast-[1.1] group-hover:grayscale-0 transition-all duration-700">

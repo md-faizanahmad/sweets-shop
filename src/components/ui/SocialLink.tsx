@@ -23,7 +23,7 @@ export function SocialLinks() {
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-[var(--muted)] hover:text-[var(--primary)] transition"
+          className="text-sm text-(--muted) hover:text-(--primary) transition"
         >
           {item.label}
         </a>
