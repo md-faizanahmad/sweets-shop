@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShoppingBag, Star } from "lucide-react";
-import { Product } from "@/features/product-preview/product";
+import { Product } from "@/features/product-preview/product.config";
 
 type Props = {
   product: Product;
@@ -16,7 +16,7 @@ export function ProductCard({ product }: Props) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ y: -8 }}
-      className="group relative flex flex-col items-center p-4 transition-all duration-500"
+      className="group relative flex flex-col items-center p-4 transition-all duration-500 cursor-pointer"
     >
       {/* 1. Organic Background Blob (Visible on Hover) */}
       <div className="absolute inset-0 z-0 bg-pink-50/50 rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-105" />

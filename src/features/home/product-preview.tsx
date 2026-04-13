@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { ProductCard } from "@/components/ui/product-card";
-import { products } from "../product-preview/product";
 import { Sparkles } from "lucide-react";
+import { products } from "../product-preview/product.config";
 
 // Animation variants for the staggered grid entrance
 const containerVariants = {
