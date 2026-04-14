@@ -1,64 +1,81 @@
 "use client";
 
-import { MapPin, Navigation } from "lucide-react";
+import { MapPin, Navigation, Clock } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { locationConfig } from "../layouts/config/location.config";
 import { motion } from "framer-motion";
 
 export function Location() {
   return (
-    <section id="location" className="py-12 bg-[#FAF9F6]">
+    <section id="location" className="py-12 md:py-20 bg-[#FAF9F6]">
       <Container>
         <div className="max-w-3xl mx-auto">
-          {/* Header - Compact */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
-            <div className="space-y-1">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-(--footer-accent)">
-                Our Boutique
-              </span>
-              <h2 className="text-2xl font-black text-neutral-900 tracking-tight">
-                Visit the Haven
-              </h2>
-            </div>
-            <p className="text-xs font-medium text-neutral-500 max-w-60">
-              Find us in the heart of the city for fresh, daily-made traditional
-              treats.
-            </p>
+          {/* Header */}
+          <div className="text-center md:text-left mb-8 md:mb-10">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400 block mb-2">
+              Our Boutique
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-neutral-900 tracking-tight">
+              Visit the Haven
+            </h2>
           </div>
 
-          {/* Compact Unified Card */}
-          <div className="relative group overflow-hidden rounded-4xl bg-white border border-neutral-100 shadow-xl shadow-neutral-200/50">
+          {/* Card */}
+          <div className="rounded-[2.5rem] bg-white border border-neutral-100 shadow-2xl shadow-neutral-200/60 overflow-hidden">
             <div className="flex flex-col md:flex-row">
-              {/* Map - Smaller & Interactive */}
-              <div className="w-full md:w-1/2 h-52 md:h-64 relative overflow-hidden grayscale-[0.5] contrast-[1.1] group-hover:grayscale-0 transition-all duration-700">
+              {/* MAP (FIXED HEIGHT) */}
+              <div className="w-full md:w-1/2 h-[350px] md:h-[450px] border-b md:border-b-0 md:border-r border-neutral-100">
                 <iframe
                   src={locationConfig.embedUrl}
-                  width="100%"
-                  height="100%"
+                  className="w-full h-full"
+                  style={{ border: 0 }}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Shop Location"
-                  className="border-0"
                 />
               </div>
 
-              {/* Info - Clean & Functional */}
-              <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
-                <div className="flex items-start gap-3 mb-6">
-                  <div className="p-2 rounded-lg bg-pink-50">
-                    <MapPin className="w-4 h-4 text-(--footer-accent)" />
+              {/* INFO */}
+              <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                <div className="space-y-6 mb-8">
+                  {/* Address */}
+                  <div className="flex items-start gap-4">
+                    <div className="p-2.5 rounded-xl bg-pink-50">
+                      <MapPin className="w-5 h-5 text-pink-500" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-black uppercase text-neutral-900 mb-1">
+                        Address
+                      </p>
+                      <p className="text-sm text-neutral-600">
+                        {locationConfig.address}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-sm font-bold leading-relaxed text-neutral-700">
-                    {locationConfig.address}
-                  </p>
+
+                  {/* Hours */}
+                  <div className="flex items-start gap-4">
+                    <div className="p-2.5 rounded-xl bg-orange-50">
+                      <Clock className="w-5 h-5 text-orange-500" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-black uppercase text-neutral-900 mb-1">
+                        Hours
+                      </p>
+                      <p className="text-sm text-neutral-600">
+                        Open Daily: 10 AM - 10 PM
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
+                {/* Button */}
                 <motion.a
-                  whileTap={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.96 }}
                   href={locationConfig.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full h-12 rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg transition-all"
+                  className="flex items-center justify-center gap-3 w-full h-14 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] shadow-xl transition-all hover:shadow-2xl"
                   style={{
                     backgroundColor: "var(--nav-cta-bg)",
                     color: "var(--nav-cta-text)",
