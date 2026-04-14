@@ -49,7 +49,7 @@ export function HeroClient({ images }: Props) {
             animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
             exit={{ opacity: 0, scale: 1.1, rotate: 10, y: -20 }}
             transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
-            className="relative w-75 h-75 md:w-125 md:h-125"
+            className="relative w-75 h-75 md:w-100 md:h-100"
           >
             {/* Subtle shadow/halo for the product */}
             <div className="absolute inset-10 bg-white/40 rounded-full blur-3xl scale-110" />
