@@ -12,5 +12,5 @@ export const locationConfig: LocationConfig = {
   // Directions link for mobile/button
   directionsUrl: "https://www.google.com/maps/dir//Gaya,+Bihar",
 
-  address: "Gaya, Bihar, India",
+  address: "G.B Road Gaya, Bihar, India",
 };
