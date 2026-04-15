@@ -24,7 +24,7 @@ export function Location() {
           <div className="rounded-[2.5rem] bg-white border border-neutral-100 shadow-2xl shadow-neutral-200/60 overflow-hidden">
             <div className="flex flex-col md:flex-row">
               {/* MAP (FIXED HEIGHT) */}
-              <div className="w-full md:w-1/2 h-[350px] md:h-[450px] border-b md:border-b-0 md:border-r border-neutral-100">
+              <div className="w-full md:w-1/2 h-87.5 md:h-112.5 border-b md:border-b-0 md:border-r border-neutral-100">
                 <iframe
                   src={locationConfig.embedUrl}
                   className="w-full h-full"

@@ -14,7 +14,7 @@ export function VisualShowcase() {
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm border border-neutral-100 shadow-sm mb-4"
         >
-          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--footer-accent)]">
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-(--footer-accent)">
             Our Kitchen
           </span>
         </motion.div>
@@ -60,7 +60,7 @@ export function VisualShowcase() {
       {/* 3. Bottom Caption - Attached below video */}
       <div className="relative z-20 py-12 text-center px-6">
         <p className="text-neutral-500 text-sm md:text-base max-w-xl mx-auto italic font-serif leading-relaxed">
-          &quot;Watch our sweets come to life — where tradition, purity, and
+          &quot;Watch our sweets come to life — where tradition, purity, and C
           perfection meet in every single bite.&quot;
         </p>
       </div>
