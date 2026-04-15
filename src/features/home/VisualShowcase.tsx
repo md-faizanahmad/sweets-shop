@@ -60,7 +60,7 @@ export function VisualShowcase() {
       {/* 3. Bottom Caption - Attached below video */}
       <div className="relative z-20 py-12 text-center px-6">
         <p className="text-neutral-500 text-sm md:text-base max-w-xl mx-auto italic font-serif leading-relaxed">
-          &quot;Watch our sweets come to life — where tradition, purity, and C
+          &quot;Watch our sweets come to life — where tradition, purity, and
           perfection meet in every single bite.&quot;
         </p>
       </div>
