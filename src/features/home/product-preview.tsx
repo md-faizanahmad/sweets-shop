@@ -66,7 +66,7 @@ export function ProductsPreview() {
           >
             <Link
               href="/products"
-              className="group flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-[var(--nav-hover)]"
+              className="group flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-(--nav-hover)"
             >
               Explore Full Menu
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -97,7 +97,7 @@ export function ProductsPreview() {
               href="/products"
               className="group relative flex flex-col items-center justify-center h-60 p-6 transition-all duration-500"
             >
-              <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-4 group-hover:bg-[var(--nav-hover)] group-hover:text-white transition-colors duration-300">
+              <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-4 group-hover:bg-(--nav-hover) group-hover:text-white transition-colors duration-300">
                 <ArrowRight className="w-5 h-5" />
               </div>
 

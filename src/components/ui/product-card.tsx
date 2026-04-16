@@ -52,7 +52,7 @@ export function ProductCard({ product }: Props) {
         {/* Info */}
         <div className="mt-4 text-center z-10 w-full">
           <h3
-            className="text-lg font-black tracking-tight transition-colors duration-300 group-hover:text-[var(--nav-hover)]"
+            className="text-lg font-black tracking-tight transition-colors duration-300 group-hover:text-(--nav-hover)"
             style={{ color: "var(--nav-text)" }}
           >
             {product.name}
