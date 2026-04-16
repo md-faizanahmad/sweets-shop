@@ -51,7 +51,7 @@ export default function Navbar() {
             className="text-xl font-bold tracking-tight transition-colors duration-300"
             style={{ color: isScrolled ? "var(--nav-text)" : "#4c4a4a" }}
           >
-            Sweet<span style={{ color: "var(--nav-hover)" }}>Shop</span>
+            Khus<span style={{ color: "var(--nav-hover)" }}>Shop</span>
           </span>
         </Link>
 
