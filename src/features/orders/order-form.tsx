@@ -6,9 +6,10 @@ interface Props {
   form: OrderFormData;
   onChange: (field: OrderField, value: string) => void;
   onLocation: () => void;
+  totalPrice: number | null;
 }
 
-export function OrderForm({ form, onChange, onLocation }: Props) {
+export function OrderForm({ form, onChange, onLocation, totalPrice }: Props) {
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -54,15 +55,32 @@ export function OrderForm({ form, onChange, onLocation }: Props) {
       </div>
 
       {/* Quantity Field */}
-      <div className="relative group">
-        <ShoppingBasket className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 group-focus-within:text-(--nav-hover) transition-colors" />
-        <input
-          name="quantity"
-          placeholder="Quantity (e.g. 1kg, 500g)"
-          value={form.quantity}
-          onChange={handleInputChange}
-          className={inputClasses}
-        />
+      <div className="space-y-2">
+        {/* Input wrapper (fixed reference for icon) */}
+        <div className="relative group">
+          <ShoppingBasket className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 group-focus-within:text-(--nav-hover) transition-colors" />
+
+          <input
+            name="quantity"
+            placeholder="Quantity (e.g. 1kg, 500g)"
+            value={form.quantity}
+            onChange={handleInputChange}
+            className={inputClasses}
+          />
+        </div>
+
+        {/* Price BELOW, outside positioning context */}
+        {form.quantity && (
+          <div className="text-sm font-bold">
+            {totalPrice ? (
+              <span className="text-green-600">Total: ₹{totalPrice}</span>
+            ) : (
+              <span className="text-red-500">
+                Enter valid quantity (e.g. 500g or 1kg)
+              </span>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Address Field */}
@@ -84,7 +102,7 @@ export function OrderForm({ form, onChange, onLocation }: Props) {
             e.preventDefault();
             onLocation();
           }}
-          className="absolute right-3 bottom-3 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-neutral-100 text-[10px] font-black uppercase tracking-wider text-[var(--footer-accent)] shadow-sm hover:bg-neutral-50 active:scale-95 transition-all"
+          className="absolute right-3 bottom-3 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-neutral-100 text-[10px] font-black uppercase tracking-wider text-(--footer-accent) shadow-sm hover:bg-neutral-50 active:scale-95 transition-all"
         >
           <MapPin className="w-3 h-3" />
           Auto-fill

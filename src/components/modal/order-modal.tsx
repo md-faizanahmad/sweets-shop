@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { X, MessageCircle } from "lucide-react";
 import { OrderModalProps } from "@/@types/order.types";
 import { useOrderForm } from "@/hooks/use-order-form";
@@ -13,9 +13,11 @@ import {
 import { buildWhatsAppURL } from "@/utils/whatsapp";
 import { contactConfig } from "../layouts/config/contact.config";
 import { OrderForm } from "@/features/orders/order-form";
+import { calculateTotalPrice } from "@/utils/price";
 
 export function OrderModal({ product, onClose }: OrderModalProps) {
   const { form, updateField, isValid, setForm } = useOrderForm();
+  const totalPrice = calculateTotalPrice(form.quantity, product.price);
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -74,6 +76,9 @@ export function OrderModal({ product, onClose }: OrderModalProps) {
             <h2 className="text-xl font-black text-neutral-900 leading-none">
               {product.name}
             </h2>
+            <div className="text-sm  text-neutral-900 leading-none">
+              {product.price}
+            </div>
           </div>
           <button
             onClick={onClose}
@@ -89,6 +94,7 @@ export function OrderModal({ product, onClose }: OrderModalProps) {
             form={form}
             onChange={updateField}
             onLocation={handleLocation}
+            totalPrice={totalPrice}
           />
         </div>
 
