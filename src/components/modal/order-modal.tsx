@@ -1,7 +1,9 @@
-// features/order/components/order-modal.tsx
-
 "use client";
 
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, MessageCircle } from "lucide-react";
 import { OrderModalProps } from "@/@types/order.types";
 import { useOrderForm } from "@/hooks/use-order-form";
 import {
@@ -14,7 +16,13 @@ import { OrderForm } from "@/features/orders/order-form";
 
 export function OrderModal({ product, onClose }: OrderModalProps) {
   const { form, updateField, isValid, setForm } = useOrderForm();
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
 
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
   const handleLocation = async () => {
     try {
       const pos = await getCurrentPosition();
@@ -22,7 +30,6 @@ export function OrderModal({ product, onClose }: OrderModalProps) {
         pos.coords.latitude,
         pos.coords.longitude,
       );
-
       setForm((prev) => ({ ...prev, address }));
     } catch {
       alert("Unable to fetch location");
@@ -34,35 +41,80 @@ export function OrderModal({ product, onClose }: OrderModalProps) {
       alert("Fill required fields");
       return;
     }
-
     const url = buildWhatsAppURL(contactConfig.phone, product, form);
     window.open(url, "_blank");
   };
+  if (typeof document === "undefined") return null;
 
-  return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md space-y-4">
-        <h2 className="text-lg font-bold">Order {product.name}</h2>
+  return createPortal(
+    <div className="fixed inset-0 z-[999] flex items-end md:items-center justify-center">
+      {/* --- BACKDROP WITH BLUR --- */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+        className="absolute inset-0 bg-neutral-900/40 backdrop-blur-md"
+      />
 
-        <OrderForm
-          form={form}
-          onChange={updateField}
-          onLocation={handleLocation}
-        />
+      {/* --- MODAL CONTAINER --- */}
+      <motion.div
+        initial={{ y: "100%", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: "100%", opacity: 0 }}
+        transition={{ type: "spring", damping: 25, stiffness: 300 }}
+        className="relative w-full max-w-md bg-white rounded-t-[2.5rem] md:rounded-[2.5rem] shadow-2xl z-10 overflow-hidden flex flex-col"
+      >
+        {/* Compact Header */}
+        <div className="p-6 pb-4 flex items-center justify-between border-b border-neutral-50 bg-[#FAF9F6]">
+          <div className="space-y-1">
+            <span className="text-[10px] font-black uppercase tracking-widest text-neutral-400">
+              Confirm Order
+            </span>
+            <h2 className="text-xl font-black text-neutral-900 leading-none">
+              {product.name}
+            </h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-2 bg-white rounded-full shadow-sm border border-neutral-100 text-neutral-400 hover:text-neutral-900 transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
-        <div className="flex gap-2">
+        {/* Form Body - Scrollable on small devices */}
+        <div className="p-6 overflow-y-auto max-h-[65vh] custom-scrollbar">
+          <OrderForm
+            form={form}
+            onChange={updateField}
+            onLocation={handleLocation}
+          />
+        </div>
+
+        {/* Action Buttons */}
+        <div className="p-6 pt-2 space-y-3">
           <button
             onClick={handleSubmit}
-            className="flex-1 bg-green-600 text-white py-2 rounded"
+            className="w-full h-14 rounded-2xl flex items-center justify-center gap-3 font-black text-xs uppercase tracking-[0.2em] shadow-xl transition-all active:scale-95"
+            style={{
+              backgroundColor: "var(--nav-cta-bg)",
+              color: "var(--nav-cta-text)",
+            }}
           >
+            <MessageCircle className="w-5 h-5" />
             Send via WhatsApp
           </button>
 
-          <button onClick={onClose} className="flex-1 bg-gray-200 py-2 rounded">
-            Cancel
+          <button
+            onClick={onClose}
+            className="w-full h-10 rounded-xl font-bold text-[10px] uppercase tracking-widest text-neutral-400 hover:text-neutral-600 transition-colors"
+          >
+            Cancel Order
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </div>,
+    document.body,
   );
 }
