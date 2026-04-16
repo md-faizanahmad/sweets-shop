@@ -65,7 +65,7 @@ export function ProductsPreview() {
             className="hidden md:block"
           >
             <Link
-              href="/products"
+              href="/allproducts"
               className="group flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-(--nav-hover)"
             >
               Explore Full Menu
@@ -94,7 +94,7 @@ export function ProductsPreview() {
             }}
           >
             <Link
-              href="/products"
+              href="/allproducts"
               className="group relative flex flex-col items-center justify-center h-60 p-6 transition-all duration-500"
             >
               <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-4 group-hover:bg-(--nav-hover) group-hover:text-white transition-colors duration-300">

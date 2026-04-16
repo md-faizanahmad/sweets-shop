@@ -1,19 +1,14 @@
 "use client";
 
-export function ProductSearch({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange: (v: string) => void;
-}) {
+import { Product } from "@/@types/product.types";
+import { ProductCard } from "@/components/ui/product-card";
+
+export function ProductGrid({ products }: { products: Product[] }) {
   return (
-    <input
-      type="text"
-      placeholder="Search sweets..."
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      className="w-full md:w-64 px-4 py-2 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-(--nav-hover)"
-    />
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {products.map((p) => (
+        <ProductCard key={p.id} product={p} />
+      ))}
+    </div>
   );
 }
