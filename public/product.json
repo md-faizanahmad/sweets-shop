@@ -1,0 +1,87 @@
+[
+  {
+    "id": "kaju-katli",
+    "name": "Kaju Katli",
+    "slug": "kaju-katli",
+    "price": {
+      "amount": 900,
+      "unit": "kg",
+      "currency": "INR"
+    },
+    "image": {
+      "src": "/products-image/kaju-katli.png",
+      "alt": "Kaju Katli traditional cashew sweet"
+    },
+    "isAvailable": true,
+    "category": "sweets",
+    "tags": ["cashew", "premium"]
+  },
+  {
+    "id": "badam-pista",
+    "name": "Badam Pista",
+    "slug": "badam-pista",
+    "price": {
+      "amount": 1100,
+      "unit": "kg",
+      "currency": "INR"
+    },
+    "image": {
+      "src": "/products-image/badam-pista.png",
+      "alt": "Badam Pista premium dry fruit sweet"
+    },
+    "isAvailable": true,
+    "category": "sweets",
+    "tags": ["dry-fruit", "premium"]
+  },
+  {
+    "id": "gulab-jamun",
+    "name": "Gulab Jamun",
+    "slug": "gulab-jamun",
+    "price": {
+      "amount": 400,
+      "unit": "kg",
+      "currency": "INR"
+    },
+    "image": {
+      "src": "/products-image/gulab-jamun.png",
+      "alt": "Gulab Jamun soft syrup dessert"
+    },
+    "isAvailable": true,
+    "category": "sweets",
+    "tags": ["syrup", "soft"]
+  },
+  {
+    "id": "khoya-peda",
+    "name": "Khoya Peda",
+    "slug": "khoya-peda",
+    "price": {
+      "amount": 480,
+      "unit": "kg",
+      "currency": "INR"
+    },
+    "image": {
+      "src": "/products-image/khoya-peda.png",
+      "alt": "Khoya Peda milk-based sweet"
+    },
+    "isAvailable": true,
+    "category": "sweets",
+    "tags": ["milk", "traditional"]
+  },
+  {
+    "id": "rasmalai",
+    "name": "Rasmalai",
+    "slug": "rasmalai",
+    "price": {
+      "amount": 420,
+      "unit": "kg",
+      "currency": "INR"
+    },
+    "image": {
+      "src": "/products-image/rasmalai.png",
+      "alt": "Rasmalai creamy milk dessert"
+    },
+    "isAvailable": true,
+    "category": "sweets",
+    "tags": ["milk", "creamy"]
+  }
+]

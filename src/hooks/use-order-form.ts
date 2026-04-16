@@ -1,4 +1,4 @@
-import { OrderField, OrderFormData } from "@/@types/order.types";
+import { OrderField, OrderFormData } from "@/@types/order-modal.types";
 import { useState } from "react";
 
 export function useOrderForm() {

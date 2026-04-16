@@ -1,4 +1,4 @@
-import { OrderFormData } from "@/@types/order.types";
+import { OrderFormData } from "@/@types/order-modal.types";
 
 export function buildWhatsAppURL(
   phone: string,

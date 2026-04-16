@@ -1,4 +1,4 @@
-// features/order/types/order.types.ts
+// features/order/types.ts
 
 export interface OrderFormData {
   name: string;
@@ -8,11 +8,3 @@ export interface OrderFormData {
 }
 
 export type OrderField = keyof OrderFormData;
-
-export interface OrderModalProps {
-  product: {
-    name: string;
-    price: string;
-  };
-  onClose: () => void;
-}
