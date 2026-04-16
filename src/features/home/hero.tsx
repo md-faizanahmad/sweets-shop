@@ -7,7 +7,7 @@ export default function Hero() {
   const { title, subtitle, description, cta, images } = heroConfig;
 
   return (
-    <section className="relative w-full min-h-screen flex items-center bg-[#FAF9F6] overflow-hidden">
+    <section className="relative w-full min-h-screen mt-6 lg:mt-0 md:mt-0 flex items-center bg-[#FAF9F6] overflow-hidden py-12 lg:py-0">
       {/* 1. Global Texture Background */}
       <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
         <Image
@@ -19,12 +19,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* 2. Client Side Animations (Blobs & Products) */}
-      <div className="absolute inset-0 z-0">
-        <HeroClient images={images} />
-      </div>
-
-      {/* 3. Bottom Gradient for Transition */}
+      {/* 2. Bottom Gradient */}
       <div
         className="absolute inset-x-0 bottom-0 h-40 z-10 pointer-events-none opacity-20"
         style={{
@@ -32,9 +27,9 @@ export default function Hero() {
         }}
       />
 
-      {/* 4. Content Container */}
+      {/* 3. Content Container */}
       <div className="container relative z-20 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="max-w-xl text-center lg:text-left pt-20">
+        <div className="max-w-xl text-center lg:text-left pt-10 lg:pt-20">
           <header className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm border border-neutral-100 shadow-sm">
               <span className="relative flex h-2 w-2">
@@ -60,6 +55,11 @@ export default function Hero() {
             {description}
           </p>
 
+          {/* MOBILE ONLY: HeroClient shows here (before the button) */}
+          <div className="block lg:hidden my-8 h-[300px]">
+            <HeroClient images={images} />
+          </div>
+
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
             <a
               href={cta.link}
@@ -75,6 +75,11 @@ export default function Hero() {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
+        </div>
+
+        {/* DESKTOP ONLY: HeroClient shows on the right side */}
+        <div className="hidden lg:flex justify-center items-center h-[500px]">
+          <HeroClient images={images} />
         </div>
       </div>
     </section>

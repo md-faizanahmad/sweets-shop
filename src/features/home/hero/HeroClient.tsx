@@ -34,10 +34,10 @@ export function HeroClient({ images }: Props) {
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
           className="absolute -top-[10%] -left-[10%] w-[70%] h-[70%] rounded-full bg-pink-50/30 blur-3xl"
         />
-        <div
+        {/* <div
           className="absolute -bottom-[20%] -right-[10%] w-[80%] h-[80%] rounded-full opacity-10 blur-2xl"
           style={{ backgroundColor: "var(--nav-hover)" }}
-        />
+        /> */}
       </div>
 
       {/* Floating Product Image Container */}

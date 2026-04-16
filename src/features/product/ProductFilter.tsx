@@ -24,13 +24,13 @@ export function ProductFilter({
   }, []);
 
   return (
-    <div className="relative group w-full md:w-auto min-w-[160px]">
+    <div className="relative group w-full md:w-auto min-w-40">
       {/* Visual Icons */}
       <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none flex items-center gap-2">
-        <Filter className="w-3.5 h-3.5 text-neutral-400 group-focus-within:text-[var(--nav-hover)] transition-colors" />
+        <Filter className="w-3.5 h-3.5 text-neutral-400 group-focus-within:text-(--nav-hover) transition-colors" />
       </div>
 
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-400 group-focus-within:text-[var(--nav-hover)] transition-colors">
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-400 group-focus-within:text-(--nav-hover) transition-colors">
         <ChevronDown className="w-4 h-4" />
       </div>
 

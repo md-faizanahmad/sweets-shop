@@ -44,7 +44,7 @@ export default function ProductsPage() {
   return (
     <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
       {/* Controls */}
-      <div className="flex flex-col md:flex-row gap-4 mb-8 items-center justify-between">
+      <div className="flex flex-col md:flex-row gap-4 mb-8 items-center justify-between mt-10">
         <ProductSearch value={search} onChange={setSearch} />
 
         <div className="flex gap-3">
