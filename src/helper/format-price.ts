@@ -10,3 +10,6 @@ export interface Price {
 export function formatPrice(price: Price): string {
   return `₹${price.amount}/${price.unit}`;
 }
+export function getPricePerKg(price: string): number {
+  return parseInt(price.replace(/\D/g, ""));
+}

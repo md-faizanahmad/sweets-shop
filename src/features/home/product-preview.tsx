@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { ProductCard } from "@/components/ui/product-card";
 import { Sparkles, ArrowRight } from "lucide-react";
-import { products } from "./config/product.config";
 import Link from "next/link";
+import { loadProducts } from "@/schema/load.products";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -16,7 +16,9 @@ const containerVariants = {
 };
 
 export function ProductsPreview() {
-  // Logic: Show only first 5 products on Home
+  const products = loadProducts();
+
+  // show only first 5
   const displayProducts = products.slice(0, 5);
 
   return (
@@ -24,11 +26,11 @@ export function ProductsPreview() {
       id="products"
       className="relative py-20 md:py-32 overflow-hidden bg-[#FAF9F6]"
     >
-      {/* Decorative Blob */}
+      {/* Background blob */}
       <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-pink-50/50 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
 
       <Container>
-        {/* --- SECTION HEADER --- */}
+        {/* HEADER */}
         <div className="relative mb-12 md:mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="text-center md:text-left">
             <motion.div
@@ -56,7 +58,7 @@ export function ProductsPreview() {
             </motion.h2>
           </div>
 
-          {/* Desktop "View All" Link */}
+          {/* Desktop CTA */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -64,7 +66,7 @@ export function ProductsPreview() {
           >
             <Link
               href="/products"
-              className="group flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-(--nav-hover)"
+              className="group flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-[var(--nav-hover)]"
             >
               Explore Full Menu
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -72,19 +74,19 @@ export function ProductsPreview() {
           </motion.div>
         </div>
 
-        {/* --- COMPACT BALANCED GRID --- */}
+        {/* GRID */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-4"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
         >
           {displayProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
 
-          {/* "View More" Card - Balanced with the Product Cards */}
+          {/* View More Card */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -93,11 +95,12 @@ export function ProductsPreview() {
           >
             <Link
               href="/products"
-              className="group relative flex flex-col items-center justify-center h-60 min-h-50 p-6    transition-all duration-500"
+              className="group relative flex flex-col items-center justify-center h-60 p-6 transition-all duration-500"
             >
-              <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-4 group-hover:bg-(--nav-hover) group-hover:text-white transition-colors duration-300">
+              <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-4 group-hover:bg-[var(--nav-hover)] group-hover:text-white transition-colors duration-300">
                 <ArrowRight className="w-5 h-5" />
               </div>
+
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 text-center group-hover:text-neutral-900">
                 See More <br /> Selection
               </span>

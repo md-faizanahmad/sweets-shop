@@ -15,9 +15,7 @@ export function parseQuantityToKg(input: string): number | null {
 
   return null;
 }
-export function getPricePerKg(price: string): number {
-  return parseInt(price.replace(/\D/g, ""));
-}
+
 export function calculateTotalPrice(
   quantity: string,
   price: string,
