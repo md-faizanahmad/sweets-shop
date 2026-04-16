@@ -1,4 +1,4 @@
-import { Product } from "@/features/home/config/product.config";
+import { Product } from "@/@types/product.types";
 
 export const buildWhatsAppMessage = (product: Product) => {
   return `🛍️ *Order Request*
