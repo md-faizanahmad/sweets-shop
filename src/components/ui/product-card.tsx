@@ -3,13 +3,27 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShoppingBag, Star } from "lucide-react";
-import { Product } from "@/features/product-preview/product.config";
+import { Product } from "@/features/home/config/product.config";
+import { buildWhatsAppMessage } from "@/hooks/buildWhatsAppMessage";
+import { contactConfig } from "../layouts/config/contact.config";
+import { useState } from "react";
+import { OrderModal } from "./OrderModal";
 
 type Props = {
   product: Product;
 };
 
 export function ProductCard({ product }: Props) {
+  const [open, setOpen] = useState(false);
+  const handleWhatsAppOrder = () => {
+    const message = buildWhatsAppMessage(product);
+    const encodedMessage = encodeURIComponent(message);
+
+    const url = `https://wa.me/${contactConfig.phone}?text=${encodedMessage}`;
+
+    window.open(url, "_blank");
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -66,6 +80,7 @@ export function ProductCard({ product }: Props) {
         {/* 4. Instant Action Button (WhatsApp or Add) */}
         <motion.button
           whileTap={{ scale: 0.95 }}
+          onClick={() => setOpen(true)}
           className="mt-5 w-full flex items-center justify-center gap-2 py-3 rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-xl"
           style={{
             backgroundColor: "var(--nav-cta-bg)",
@@ -75,6 +90,9 @@ export function ProductCard({ product }: Props) {
           <ShoppingBag className="w-4 h-4" />
           Order Now
         </motion.button>
+        {open && (
+          <OrderModal product={product} onClose={() => setOpen(false)} />
+        )}
       </div>
     </motion.div>
   );

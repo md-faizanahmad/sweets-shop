@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { ProductCard } from "@/components/ui/product-card";
 import { Sparkles } from "lucide-react";
-import { products } from "../product-preview/product.config";
+import { products } from "./config/product.config";
 
 // Animation variants for the staggered grid entrance
 const containerVariants = {
@@ -76,25 +76,6 @@ export function ProductsPreview() {
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-        </motion.div>
-
-        {/* --- BOTTOM CTA (Optional) --- */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-20 text-center"
-        >
-          <p className="text-sm font-bold text-neutral-400 uppercase tracking-widest">
-            Don&apos;t see your favorite?
-            <a
-              href="#contact"
-              className="ml-2 underline transition-colors hover:text-(--nav-hover)"
-              style={{ color: "var(--nav-text)" }}
-            >
-              Ask us on WhatsApp
-            </a>
-          </p>
         </motion.div>
       </Container>
     </section>
