@@ -8,17 +8,23 @@ import { X, MessageCircle } from "lucide-react";
 import { useOrderForm } from "@/hooks/use-order-form";
 import { OrderForm } from "./OrderForm";
 import { OrderModalProps } from "@/@types/order-modal.types";
+import { buildWhatsAppURL } from "@/utils/whatsapp";
+import { contactConfig } from "@/components/layouts/config/contact.config";
+
+import {
+  getCurrentPosition,
+  getAddressFromCoordinates,
+} from "@/utils/location";
 import { calculateTotalPrice } from "@/helper/calculateTotalPrice";
+import { formatPrice } from "@/helper/parse-quantity";
 
 export function OrderModal({ product, open, onClose }: OrderModalProps) {
-  const { form, updateField, isValid } = useOrderForm();
+  const { form, updateField, isValid, setForm } = useOrderForm();
 
-  // ✅ correct price usage
   const totalPrice = useMemo(() => {
     return calculateTotalPrice(form.quantity, product.price.amount);
   }, [form.quantity, product.price.amount]);
 
-  // lock scroll only when open
   useEffect(() => {
     if (!open) return;
 
@@ -28,14 +34,37 @@ export function OrderModal({ product, open, onClose }: OrderModalProps) {
     };
   }, [open]);
 
-  const handleSubmit = () => {
-    if (!isValid) return;
+  // ✅ RESTORED LOCATION (clean)
+  const handleLocation = async () => {
+    try {
+      const pos = await getCurrentPosition();
 
-    console.log("Order:", {
+      const address = await getAddressFromCoordinates(
+        pos.coords.latitude,
+        pos.coords.longitude,
+      );
+
+      setForm((prev) => ({
+        ...prev,
+        address,
+      }));
+    } catch (err) {
+      console.error("Location error:", err);
+      alert("Unable to fetch location");
+    }
+  };
+
+  const handleSubmit = () => {
+    if (!isValid || !product.isAvailable) return;
+
+    const url = buildWhatsAppURL(
+      contactConfig.phone,
       product,
       form,
       totalPrice,
-    });
+    );
+
+    window.open(url, "_blank");
 
     onClose();
   };
@@ -44,7 +73,7 @@ export function OrderModal({ product, open, onClose }: OrderModalProps) {
 
   return createPortal(
     open && (
-      <div className="fixed inset-0 z-[999] flex items-end md:items-center justify-center">
+      <div className="fixed inset-0 z-999 flex items-end md:items-center justify-center">
         {/* BACKDROP */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -92,6 +121,7 @@ export function OrderModal({ product, open, onClose }: OrderModalProps) {
               form={form}
               onChange={updateField}
               totalPrice={totalPrice}
+              onLocation={handleLocation} // ✅ real function
             />
           </div>
 
@@ -99,7 +129,8 @@ export function OrderModal({ product, open, onClose }: OrderModalProps) {
           <div className="p-6 pt-2 space-y-3">
             <button
               onClick={handleSubmit}
-              className="w-full h-14 rounded-2xl flex items-center justify-center gap-3 font-black text-xs uppercase tracking-[0.2em] shadow-xl transition-all active:scale-95"
+              disabled={!isValid || !product.isAvailable}
+              className="w-full h-14 rounded-2xl flex items-center justify-center gap-3 font-black text-xs uppercase tracking-[0.2em] shadow-xl transition-all active:scale-95 disabled:opacity-50"
               style={{
                 backgroundColor: "var(--nav-cta-bg)",
                 color: "var(--nav-cta-text)",

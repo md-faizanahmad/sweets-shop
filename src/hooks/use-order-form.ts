@@ -1,4 +1,4 @@
-import { OrderField, OrderFormData } from "@/@types/order-modal.types";
+import { OrderField, OrderFormData } from "@/features/orders/types";
 import { useState } from "react";
 
 export function useOrderForm() {
@@ -12,7 +12,6 @@ export function useOrderForm() {
   const updateField = (field: OrderField, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
-
   const isValid =
     form.name.trim() !== "" &&
     form.phone.trim() !== "" &&

@@ -1,30 +1,29 @@
-// features/order/components/OrderForm.tsx
-
 "use client";
 
 import { User, Phone } from "lucide-react";
 import { InputField } from "./InputField";
 import { QuantityField } from "./QuantityField";
-import { useOrderForm } from "../hooks/useOrderForm";
+import { OrderFormData, OrderField } from "@/features/orders/types";
 
 export function OrderForm({
+  form,
+  onChange,
   totalPrice,
   onLocation,
 }: {
+  form: OrderFormData;
+  onChange: (field: OrderField, value: string) => void;
   totalPrice: number | null;
   onLocation: () => void;
 }) {
-  const { form, errors, updateField, validate } = useOrderForm({
-    name: "",
-    phone: "",
-    quantity: "",
-    address: "",
-  });
+  const isValid =
+    form.name.trim() !== "" &&
+    form.phone.trim() !== "" &&
+    form.quantity.trim() !== "";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!validate()) return;
+    if (!isValid) return;
 
     console.log("Submit:", form);
   };
@@ -36,8 +35,7 @@ export function OrderForm({
         value={form.name}
         placeholder="Your Full Name"
         icon={User}
-        error={errors.name}
-        onChange={(v) => updateField("name", v)}
+        onChange={(v) => onChange("name", v)}
       />
 
       <InputField
@@ -46,44 +44,44 @@ export function OrderForm({
         placeholder="Contact Number"
         icon={Phone}
         type="tel"
-        error={errors.phone}
-        onChange={(v) => updateField("phone", v)}
+        onChange={(v) => onChange("phone", v)}
       />
 
       <QuantityField
         value={form.quantity}
         totalPrice={totalPrice}
-        error={errors.quantity}
-        onChange={(v) => updateField("quantity", v)}
+        onChange={(v) => onChange("quantity", v)}
       />
-
-      <div className="relative">
+      <div className="relative group">
+        {/* 1. The Compact Textarea */}
         <textarea
           value={form.address}
-          onChange={(e) => updateField("address", e.target.value)}
-          placeholder="Delivery Address"
-          className="w-full p-4 rounded-xl border"
+          onChange={(e) => onChange("address", e.target.value)}
+          placeholder="Delivery Address (House No, Street, Landmark...)"
+          rows={3}
+          className="w-full bg-neutral-50 border border-neutral-100 px-4 py-4 pr-12 rounded-2xl text-sm font-medium placeholder:text-neutral-400 focus:bg-white focus:border-(--nav-hover) focus:ring-4 focus:ring-(--nav-hover)/5 outline-hidden transition-all duration-200 resize-none"
         />
 
-        <button
-          type="button"
-          onClick={onLocation}
-          className="absolute right-3 bottom-3 text-xs"
-        >
-          Auto-fill
-        </button>
-
-        {errors.address && (
-          <p className="text-xs text-red-500">{errors.address}</p>
-        )}
+        {/* 2. Enhanced Location Action */}
+        <div className="absolute right-3 bottom-3 flex items-center">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              onLocation();
+            }}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-neutral-100 text-[10px] font-black uppercase tracking-wider text-(--footer-accent) shadow-sm hover:bg-neutral-50 hover:border-(--nav-hover) active:scale-95 transition-all group/loc"
+            title="Use Live Location"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+            </span>
+            <span className="hidden sm:inline">Live Location</span>
+            <span className="sm:hidden">GPS</span>
+          </button>
+        </div>
       </div>
-
-      <button
-        type="submit"
-        className="w-full py-3 bg-black text-white rounded-xl"
-      >
-        Place Order
-      </button>
     </form>
   );
 }

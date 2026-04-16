@@ -4,7 +4,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { PhoneCall, ShoppingBag, Star } from "lucide-react";
 import { contactConfig } from "../layouts/config/contact.config";
+import { useState } from "react";
 import Link from "next/link";
+import { OrderModal } from "@/features/orders/components/Order-Modal";
 import { Product } from "@/@types/product.types";
 import { formatPrice } from "@/helper/parse-quantity";
 
@@ -13,6 +15,8 @@ type Props = {
 };
 
 export function ProductCard({ product }: Props) {
+  const [open, setOpen] = useState(false);
+
   const priceText = formatPrice(product);
 
   return (
@@ -48,7 +52,7 @@ export function ProductCard({ product }: Props) {
         {/* Info */}
         <div className="mt-4 text-center z-10 w-full">
           <h3
-            className="text-lg font-black tracking-tight transition-colors duration-300 group-hover:text-(--nav-hover)"
+            className="text-lg font-black tracking-tight transition-colors duration-300 group-hover:text-[var(--nav-hover)]"
             style={{ color: "var(--nav-text)" }}
           >
             {product.name}
@@ -71,6 +75,7 @@ export function ProductCard({ product }: Props) {
           {/* Actions */}
           <div className="mt-6 w-full flex gap-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
             <button
+              onClick={() => setOpen(true)}
               disabled={!product.isAvailable}
               className="flex-1 h-12 flex items-center justify-center gap-2 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] shadow-lg active:scale-95 disabled:opacity-50"
               style={{
@@ -90,6 +95,12 @@ export function ProductCard({ product }: Props) {
           </div>
         </div>
       </motion.div>
+
+      <OrderModal
+        open={open}
+        product={product}
+        onClose={() => setOpen(false)}
+      />
     </>
   );
 }

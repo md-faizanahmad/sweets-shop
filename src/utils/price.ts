@@ -1,5 +1,7 @@
 // utils/price.ts
 
+import { getPricePerKg } from "@/helper/format-price";
+
 export function parseQuantityToKg(input: string): number | null {
   const value = input.toLowerCase().trim();
 
@@ -14,16 +16,4 @@ export function parseQuantityToKg(input: string): number | null {
   }
 
   return null;
-}
-
-export function calculateTotalPrice(
-  quantity: string,
-  price: string,
-): number | null {
-  const kg = parseQuantityToKg(quantity);
-  const pricePerKg = getPricePerKg(price);
-
-  if (!kg) return null;
-
-  return kg * pricePerKg;
 }

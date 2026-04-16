@@ -1,12 +1,7 @@
 // features/order/types/order-modal.types.ts
 
 import { OrderFormData } from "@/features/orders/types";
-
-export interface Product {
-  id: string;
-  name: string;
-  price: number; // keep it number, not string garbage like "₹900/kg"
-}
+import { Product } from "./product.types";
 
 export interface OrderModalProps {
   // core
