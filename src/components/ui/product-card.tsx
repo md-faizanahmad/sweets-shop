@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ShoppingBag, Star } from "lucide-react";
+import { PhoneCall, ShoppingBag, Star } from "lucide-react";
 import { Product } from "@/features/home/config/product.config";
+import { buildWhatsAppMessage } from "@/hooks/buildWhatsAppMessage";
+import { contactConfig } from "../layouts/config/contact.config";
 import { useState } from "react";
 import { OrderModal } from "../modal/order-modal";
+import Link from "next/link";
 
 type Props = {
   product: Product;
@@ -35,7 +38,7 @@ export function ProductCard({ product }: Props) {
             src={product.image}
             alt={product.alt || product.name}
             fill
-            className="object-contain p-4 drop-shadow-[0_10px_10px_rgba(0,0,0,0.08)] transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+            className="object-contain  drop-shadow-[0_10px_10px_rgba(0,0,0,0.08)] transition-transform duration-500 group-hover:scale-110 "
             sizes="(max-width: 768px) 50vw, 25vw"
           />
 
@@ -68,19 +71,26 @@ export function ProductCard({ product }: Props) {
             </span>
           </div>
 
-          {/* 4. Instant Action Button (WhatsApp or Add) */}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setOpen(true)}
-            className="mt-5 w-full flex items-center justify-center gap-2 py-3 rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-xl"
-            style={{
-              backgroundColor: "var(--nav-cta-bg)",
-              color: "var(--nav-cta-text)",
-            }}
-          >
-            <ShoppingBag className="w-4 h-4" />
-            Order Now
-          </motion.button>
+          {/* 4. Instant Action Button (WhatsApp or Call) */}
+          <div className="mt-6 w-full flex gap-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+            <button
+              onClick={() => setOpen(true)}
+              className="flex-1 h-12 flex items-center justify-center gap-2 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] shadow-lg active:scale-95"
+              style={{
+                backgroundColor: "var(--nav-cta-bg)",
+                color: "var(--nav-cta-text)",
+              }}
+            >
+              <ShoppingBag className="w-4 h-4" /> Order
+            </button>
+
+            <Link
+              href={`tel:${contactConfig.phone}`}
+              className="w-12 h-12 flex items-center justify-center rounded-2xl bg-white border border-neutral-100 text-neutral-400 hover:text-neutral-900 shadow-sm active:scale-95 transition-colors"
+            >
+              <PhoneCall className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </motion.div>
       {open && <OrderModal product={product} onClose={() => setOpen(false)} />}

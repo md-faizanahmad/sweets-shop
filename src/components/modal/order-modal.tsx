@@ -47,7 +47,7 @@ export function OrderModal({ product, onClose }: OrderModalProps) {
   if (typeof document === "undefined") return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[999] flex items-end md:items-center justify-center">
+    <div className="fixed inset-0 z-999 flex items-end md:items-center justify-center">
       {/* --- BACKDROP WITH BLUR --- */}
       <motion.div
         initial={{ opacity: 0 }}
