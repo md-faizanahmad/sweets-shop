@@ -1,5 +1,3 @@
-// features/order/utils/geolocation.ts
-
 export async function getAddressFromCoordinates(
   latitude: number,
   longitude: number,
