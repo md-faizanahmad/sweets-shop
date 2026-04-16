@@ -1,5 +1,3 @@
-// features/order/components/order-form.tsx
-
 import { OrderField, OrderFormData } from "@/@types/order.types";
 import { ChangeEvent } from "react";
 

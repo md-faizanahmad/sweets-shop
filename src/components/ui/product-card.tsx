@@ -7,7 +7,7 @@ import { Product } from "@/features/home/config/product.config";
 import { buildWhatsAppMessage } from "@/hooks/buildWhatsAppMessage";
 import { contactConfig } from "../layouts/config/contact.config";
 import { useState } from "react";
-import { OrderModal } from "./OrderModal";
+import { OrderModal } from "../modal/order-modal";
 
 type Props = {
   product: Product;
