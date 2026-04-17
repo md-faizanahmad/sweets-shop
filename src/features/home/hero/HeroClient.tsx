@@ -67,7 +67,7 @@ export function HeroClient({ images }: Props) {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="absolute bottom-10 -left-5 md:left-0 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-2xl shadow-xl border border-neutral-100 flex items-center gap-3"
+              className="absolute bottom-5 -left-5 md:left-0 bg-white/90 backdrop-blur-sm p-3 md:p-2 rounded-2xl shadow-xl border border-neutral-100 flex items-center gap-3"
             >
               <div className="text-xl md:text-2xl">🍯</div>
               <div className="leading-tight">

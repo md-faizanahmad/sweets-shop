@@ -3,7 +3,7 @@
 export function FooterMeta() {
   return (
     <p className="text-small text-(--muted)">
-      © {new Date().getFullYear()} SweetShop. All rights reserved.
+      © {new Date().getFullYear()} KhusShop. All rights reserved.
     </p>
   );
 }
