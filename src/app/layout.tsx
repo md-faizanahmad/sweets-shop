@@ -15,18 +15,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kaverisweets.com"), // change to real domain
+  metadataBase: new URL("https://khussweets.com"), // change to real domain
 
   title: {
-    default: "Kaveri Sweets | Fresh Mithai & Cakes",
-    template: "%s | Kaveri Sweets",
+    default: "Khus Sweets | Fresh Mithai & Cakes",
+    template: "%s | Khus Sweets",
   },
 
   description:
-    "Kaveri Sweets offers freshly made mithai, premium cakes, and traditional Indian sweets. Order online or visit our shop for authentic taste and quality.",
+    "Khus Sweets offers freshly made mithai, premium cakes, and traditional Indian sweets. Order online or visit our shop for authentic taste and quality.",
 
   keywords: [
-    "Kaveri Sweets",
+    "Khus Sweets",
     "Sweet shop",
     "Mithai",
     "Indian sweets",
@@ -35,22 +35,22 @@ export const metadata: Metadata = {
     "Fresh sweets",
   ],
 
-  authors: [{ name: "Kaveri Sweets" }],
-  creator: "Kaveri Sweets",
-  publisher: "Kaveri Sweets",
+  authors: [{ name: "Khus Sweets" }],
+  creator: "Khus Sweets",
+  publisher: "Khus Sweets",
 
   openGraph: {
-    title: "Kaveri Sweets | Fresh Mithai & Cakes",
+    title: "Khus Sweets | Fresh Mithai & Cakes",
     description:
-      "Premium sweets and cakes made fresh daily. Experience authentic taste at Kaveri Sweets.",
+      "Premium sweets and cakes made fresh daily. Experience authentic taste at Khus Sweets.",
     url: "https://kaverisweets.com",
-    siteName: "Kaveri Sweets",
+    siteName: "Khus Sweets",
     images: [
       {
         url: "/og-image.jpg", // MUST exist in public folder
         width: 1200,
         height: 630,
-        alt: "Kaveri Sweets",
+        alt: "Khus Sweets",
       },
     ],
     locale: "en_IN",
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Kaveri Sweets | Fresh Mithai & Cakes",
+    title: "Khus Sweets | Fresh Mithai & Cakes",
     description:
-      "Order fresh sweets and cakes from Kaveri Sweets. Authentic taste, premium quality.",
+      "Order fresh sweets and cakes from Khus Sweets. Authentic taste, premium quality.",
     images: ["/og-image.jpg"],
   },
 
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://kaverisweets.com",
+    canonical: "https://khussweets.com",
   },
 
   robots: {
