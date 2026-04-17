@@ -73,7 +73,7 @@ export function ProductCard({ product }: Props) {
           </div>
 
           {/* Actions */}
-          <div className="mt-6 w-full flex gap-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          <div className="mt-6 w-full flex gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 md:lg:opacity-0 md:lg:group-hover:opacity-100 translate-y-2  group-hover:translate-y-0 transition-all duration-300">
             <button
               onClick={() => setOpen(true)}
               disabled={!product.isAvailable}
