@@ -15,7 +15,7 @@ export type FooterConfig = {
 };
 
 export const footerConfig: FooterConfig = {
-  brand: "SweetShop",
+  brand: "KhusShop",
   description: "Fresh traditional sweets made daily with premium ingredients.",
 
   links: [
