@@ -11,19 +11,19 @@ interface AboutVisualProps {
 export function AboutVisual({ src, alt }: AboutVisualProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="relative w-full aspect-square max-w-125 mx-auto"
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="relative w-full aspect-square"
     >
       <Image
         src={src}
         alt={alt}
         fill
         priority
-        sizes="(max-width: 768px) 100vw, 500px"
-        className="object-contain drop-shadow-2xl"
+        sizes="(max-width: 768px) 100vw, 600px"
+        className="object-contain"
       />
     </motion.div>
   );

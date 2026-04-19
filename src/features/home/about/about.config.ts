@@ -7,17 +7,25 @@ export const aboutConfig = {
     "We bring authentic sweets made with premium ingredients, combining tradition and modern taste to create unforgettable flavors.",
   // Central shop image
   image: {
-    src: "/images/shop-3d.png",
+    src: "/images/shop.png",
     alt: "Authentic Indian Mithai Shop Illustration",
   },
   // Surrounding floating elements (Sweets, Cakes, Snacks)
   elements: [
-    { src: "/images/laddu-3d.png", alt: "Floating Laddu", size: 80 },
-    { src: "/images/samosa-3d.png", alt: "Floating Samosa", size: 90 },
-    { src: "/images/jalebi-3d.png", alt: "Floating Jalebi", size: 70 },
-    { src: "/images/cake-slice-3d.png", alt: "Floating Cake Slice", size: 100 },
-    { src: "/images/kaju-katli-3d.png", alt: "Floating Kaju Katli", size: 75 },
-    { src: "/images/chai-cutting-3d.png", alt: "Floating Chai", size: 85 },
+    { src: "/about-img/Motichoor-Laddu.png", alt: "Floating Laddu", size: 80 },
+    { src: "/about-img/Samosa.png", alt: "Floating Samosa", size: 90 },
+    { src: "/about-img/Jalebi.png", alt: "Floating Jalebi", size: 70 },
+    {
+      src: "/about-img/Cake-Slice.png",
+      alt: "Floating Cake Slice",
+      size: 100,
+    },
+    {
+      src: "/about-img/Kaju-Katli.png",
+      alt: "Floating Kaju Katli",
+      size: 75,
+    },
+    { src: "/about-img/Cutting-Chai.png", alt: "Floating Chai", size: 85 },
   ],
   links: {
     story: "/our-story",
