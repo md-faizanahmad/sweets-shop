@@ -1,4 +1,4 @@
-import { AboutSection } from "@/features/home/about/AboutSection";
+import AboutSection from "@/features/home/about/AboutSection";
 import Hero from "@/features/home/hero";
 import { ProductsPreview } from "@/features/home/product-preview";
 import { TrustSection } from "@/features/home/trust-section";

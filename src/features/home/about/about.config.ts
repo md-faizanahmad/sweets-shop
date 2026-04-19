@@ -7,7 +7,7 @@ export const aboutConfig = {
     "We bring authentic sweets made with premium ingredients, combining tradition and modern taste to create unforgettable flavors.",
   // Central shop image
   image: {
-    src: "/images/shop.png",
+    src: "/about-img/shop.png",
     alt: "Authentic Indian Mithai Shop Illustration",
   },
   // Surrounding floating elements (Sweets, Cakes, Snacks)
