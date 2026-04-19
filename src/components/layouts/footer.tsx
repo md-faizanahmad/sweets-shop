@@ -11,14 +11,14 @@ export function Footer() {
 
   return (
     <footer
-      className="relative mt-16 border-t overflow-hidden"
+      className="relative mt-20 border-t overflow-hidden"
       style={{
         backgroundColor: "var(--footer-bg)",
         borderColor: "var(--footer-border)",
       }}
     >
-      {/* Texture */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+      {/* Texture Watermark */}
+      <div className="absolute inset-0 z-1 opacity-[1] pointer-events-none select-none">
         <Image
           src="/assets/hero-bg.png"
           alt="Texture"
@@ -28,50 +28,35 @@ export function Footer() {
       </div>
 
       <Container className="relative z-10">
-        {/* Main Section */}
-        <div className="py-10 md:py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {/* Brand */}
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <FooterBrand brand={brand} description={description} />
-
-          {/* Links */}
           <FooterLinks links={links} contact={contact} />
-
-          {/* Map (desktop inline) */}
-          <div className="hidden lg:block">
-            <FooterMap address={contact.location} />
-          </div>
-        </div>
-
-        {/* Map for Mobile */}
-        <div className="pb-10 lg:hidden">
           <FooterMap address={contact.location} />
         </div>
 
         {/* Bottom Bar */}
         <div
-          className="py-6 border-t flex flex-col md:flex-row gap-4 justify-between items-center text-center md:text-left"
+          className="py-10 border-t flex flex-col md:flex-row gap-6 justify-between items-center"
           style={{ borderColor: "var(--footer-border)" }}
         >
           <div
-            className="text-xs font-medium tracking-wide"
+            className="text-[10px] font-bold uppercase tracking-widest"
             style={{ color: "var(--footer-muted)" }}
           >
             <FooterMeta />
           </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-4">
             <span
-              className="text-xs font-medium tracking-wide"
+              className="text-[10px] font-bold uppercase tracking-widest"
               style={{ color: "var(--footer-muted)" }}
             >
               Accepting
             </span>
-
-            <div className="flex gap-2">
+            <div className="flex gap-2 opacity-60">
               {["UPI", "CARD", "CASH"].map((mode) => (
                 <div
                   key={mode}
-                  className="px-3 py-1 border text-xs font-medium rounded"
+                  className="px-2 py-0.5 border text-[10px] font-bold rounded"
                   style={{
                     borderColor: "var(--footer-border)",
                     color: "var(--footer-text)",
