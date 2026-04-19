@@ -27,7 +27,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
 
   return (
     <div
-      className="relative flex items-center justify-center h-[500px] lg:h-[600px] order-1 lg:order-2 group"
+      className="relative flex items-center justify-center h-125 lg:h-150 order-1 lg:order-2 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -83,7 +83,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative shadow-xl rounded-2xl bg-white/50 backdrop-blur-md p-3 border border-white/40"
+              className="relative shadow-xl rounded-full bg-white/50 backdrop-blur-md p-3 border border-white/40"
             >
               <Image
                 src={el.src}
@@ -99,7 +99,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
 
       {/* 3. ATMOSPHERIC GRADIENT */}
       <div className="absolute inset-0 z-10 pointer-events-none">
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#FAF9F6] via-[#FAF9F6]/80 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#FAF9F6] via-[#FAF9F6]/80 to-transparent" />
       </div>
     </div>
   );
