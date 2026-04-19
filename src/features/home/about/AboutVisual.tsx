@@ -3,22 +3,27 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export function AboutVisual() {
+interface AboutVisualProps {
+  src: string;
+  alt: string;
+}
+
+export function AboutVisual({ src, alt }: AboutVisualProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }} // Prevents animation from re-triggering constantly
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative w-full max-w-2xl mx-auto aspect-square md:aspect-video lg:h-100"
+      initial={{ opacity: 0, x: 20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="relative w-full aspect-square max-w-125 mx-auto"
     >
       <Image
-        src="/images/shop-3d.png"
-        alt="3D Shop Illustration"
+        src={src}
+        alt={alt}
         fill
-        priority // Loads this image faster as it's likely a focal point
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="object-contain"
+        priority
+        sizes="(max-width: 768px) 100vw, 500px"
+        className="object-contain drop-shadow-2xl"
       />
     </motion.div>
   );

@@ -9,8 +9,8 @@ export default function HomePage() {
     <main>
       <Hero />
       <ProductsPreview />
-      <VisualShowcase />
       <AboutSection />
+      <VisualShowcase />
       <TrustSection />
       {/* <Image alt="" src="/assets/g-jamun.png" width={50} height={50} /> */}
     </main>
