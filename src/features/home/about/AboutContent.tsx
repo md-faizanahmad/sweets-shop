@@ -41,7 +41,7 @@ export function AboutContent({
         </AnimatePresence>
       </div>
 
-      <p className="text-lg mt-16 md:text-xl text-neutral-600 mb-10 leading-relaxed font-medium max-w-xl">
+      <p className="text-lg mt-20 md:text-xl text-neutral-600 mb-10 leading-relaxed font-medium max-w-xl ">
         {description}
       </p>
 
