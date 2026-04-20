@@ -17,7 +17,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
   // Handle responsive radius for the orbit
   useEffect(() => {
     const updateRadius = (): void => {
-      setRadius(window.innerWidth < 768 ? 160 : 240);
+      setRadius(window.innerWidth < 768 ? 130 : 200);
     };
 
     updateRadius();
@@ -42,7 +42,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
           repeat: isHovered ? 0 : Infinity,
           ease: "easeInOut",
         }}
-        className="relative w-50 h-50 cursor-pointer md:w-80 md:h-80 z-20 rounded-full overflow-hidden border-8 border-white shadow-2xl"
+        className="relative w-40 h-40 cursor-pointer md:w-80 md:h-80 z-20 rounded-full overflow-hidden border-8 border-white shadow-2xl"
       >
         <Image
           src={shopImage.src}
@@ -62,7 +62,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
         return (
           <motion.div
             key={el.src}
-            className="absolute z-30 pointer-events-none"
+            className="absolute z-30 pointer-events-none cursor-pointer"
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             animate={{
@@ -83,14 +83,14 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative shadow-xl rounded-full bg-white/50 backdrop-blur-md p-3 border border-white/40"
+              className="relative shadow-xl rounded-full bg-white/50 backdrop-blur-md p-3 border border-white/40 "
             >
               <Image
                 src={el.src}
                 alt={el.alt}
                 width={el.size}
                 height={el.size}
-                className="object-contain"
+                className="object-contain cursor-pointer"
               />
             </motion.div>
           </motion.div>
