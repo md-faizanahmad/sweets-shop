@@ -42,7 +42,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
           repeat: isHovered ? 0 : Infinity,
           ease: "easeInOut",
         }}
-        className="relative w-64 h-64 md:w-80 md:h-80 z-20 rounded-full overflow-hidden border-8 border-white shadow-2xl"
+        className="relative w-50 h-50 cursor-pointer md:w-80 md:h-80 z-20 rounded-full overflow-hidden border-8 border-white shadow-2xl"
       >
         <Image
           src={shopImage.src}
