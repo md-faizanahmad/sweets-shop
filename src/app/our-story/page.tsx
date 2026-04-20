@@ -1,19 +1,25 @@
-// app/our-story/page.tsx
+// /app/our-story/page.tsx
+import { Metadata } from "next";
 import Hero from "@/components/our-story/Hero";
 import Timeline from "@/components/our-story/Timeline";
 import Values from "@/components/our-story/Values";
 import Craft from "@/components/our-story/Craft";
 import Closing from "@/components/our-story/Closing";
 
-export const metadata = {
-  title: "Our Story | Premium Indian Mithai & Patisserie",
+export const metadata: Metadata = {
+  title: "Our Story | Premium Indian Mithai & Restaurant",
   description:
-    "A journey of flavor, tradition, and craftsmanship spanning three generations.",
+    "Discover the heritage of our artisan sweets and the journey of our traditional Indian kitchen.",
+  openGraph: {
+    title: "Our Story | Premium Indian Mithai",
+    description: "A legacy of taste spanning generations.",
+    type: "website",
+  },
 };
 
 export default function OurStoryPage() {
   return (
-    <main className="bg-[#FCF9F5] text-[#2D2926] overflow-x-hidden">
+    <main className="bg-[#FCF9F5] text-[#2D2926] overflow-x-hidden selection:bg-[#B3541E] selection:text-white">
       <Hero />
       <Timeline />
       <Values />

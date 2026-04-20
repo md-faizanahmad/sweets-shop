@@ -1,33 +1,23 @@
+// /components/our-story/Values.tsx
 import AnimatedSection from "./AnimatedSection";
-
-// components/our-story/Values.tsx
-const values = [
-  {
-    title: "Purest Ingredients",
-    text: "Organic A2 Ghee and hand-picked Saffron from the valleys of Pampore.",
-  },
-  {
-    title: "Time-Honored",
-    text: "We follow the slow-cooking methods used by our ancestors for over 70 years.",
-  },
-  {
-    title: "Modern Elegance",
-    text: "Our packaging and service reflect the grace of contemporary India.",
-  },
-];
+import { OUR_STORY_CONFIG } from "./our-story.config";
 
 export default function Values() {
   return (
-    <section className="py-24 px-6 bg-[#FCF9F5]">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-        {values.map((v, i) => (
+    <section className="py-32 px-6 bg-white">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+        {OUR_STORY_CONFIG.values.map((v, i) => (
           <AnimatedSection key={i}>
-            <div className="text-center p-8 bg-white/50 border border-stone-100 rounded-sm">
-              <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-full mx-auto mb-6 flex items-center justify-center text-[#B3541E]">
-                ✦
+            <div className="text-center group cursor-default">
+              <div className="text-4xl mb-8 transform transition-transform group-hover:scale-110 duration-500 block">
+                {v.icon}
               </div>
-              <h3 className="font-serif text-xl mb-4">{v.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{v.text}</p>
+              <h3 className="font-serif text-2xl mb-6 tracking-wide">
+                {v.title}
+              </h3>
+              <p className="text-gray-500 leading-relaxed font-light">
+                {v.text}
+              </p>
             </div>
           </AnimatedSection>
         ))}
