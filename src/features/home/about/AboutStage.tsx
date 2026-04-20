@@ -83,7 +83,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative shadow-xl rounded-full bg-white/50 backdrop-blur-md p-3 border border-white/40 "
+              className="relative shadow-xl rounded-full bg-white/50 backdrop-blur-md p-1.5 border border-white/40 "
             >
               <Image
                 src={el.src}
