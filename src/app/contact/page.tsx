@@ -89,7 +89,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:bg-white focus:ring-2 focus:ring-[var(--nav-hover)] outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:bg-white focus:ring-2 focus:ring-(--nav-hover) outline-none transition-all"
                     placeholder="John Doe"
                   />
                 </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:bg-white focus:ring-2 focus:ring-[var(--nav-hover)] outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:bg-white focus:ring-2 focus:ring-(--nav-hover) outline-none transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:bg-white focus:ring-2 focus:ring-[var(--nav-hover)] outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:bg-white focus:ring-2 focus:ring-(--nav-hover) outline-none transition-all"
                   placeholder="Bulk Order Inquiry"
                 />
               </div>
@@ -122,7 +122,7 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:bg-white focus:ring-2 focus:ring-[var(--nav-hover)] outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:bg-white focus:ring-2 focus:ring-(--nav-hover) outline-none transition-all resize-none"
                   placeholder="Your message here..."
                 ></textarea>
               </div>
@@ -183,7 +183,7 @@ function SocialIcon({ icon, link }: { icon: React.ReactNode; link: string }) {
   return (
     <a
       href={link}
-      className="p-3 rounded-full bg-gray-100 text-[#4c4a4a] hover:bg-[var(--nav-hover)] hover:text-white transition-all duration-300"
+      className="p-3 rounded-full bg-gray-100 text-[#4c4a4a] hover:bg-(--nav-hover) hover:text-white transition-all duration-300"
     >
       {icon}
     </a>
