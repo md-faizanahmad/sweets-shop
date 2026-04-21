@@ -47,7 +47,7 @@ export default function NotFound() {
 
         <button
           onClick={() => window.history.back()}
-          className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#4c4a4a] transition-colors hover:text-[var(--nav-hover)]"
+          className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#4c4a4a] transition-colors hover:text-(--nav-hover)"
         >
           <ArrowLeft className="h-4 w-4" />
           Go Back
@@ -56,7 +56,7 @@ export default function NotFound() {
 
       {/* Decorative Background Element */}
       <div
-        className="absolute -z-10 h-[300px] w-[300px] rounded-full blur-[120px] opacity-20"
+        className="absolute -z-10 h-75 w-75 rounded-full blur-[120px] opacity-20"
         style={{ backgroundColor: "var(--nav-hover)" }}
       />
     </main>
