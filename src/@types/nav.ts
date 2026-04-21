@@ -11,6 +11,6 @@ export const NAV_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Our Story", href: "/our-story" },
   { label: "Menu's", href: "/menu" },
-  { label: "Location", href: "/location" },
+  { label: "Products", href: "/allproducts" },
   { label: "Contact", href: "/contact" },
 ];
