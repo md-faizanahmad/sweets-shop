@@ -1,7 +1,12 @@
 import { Phone, Clock } from "lucide-react";
 import { FooterActions } from "./FooterActions"; // Path to component above
+import { FooterConfig } from "../config/footer.config";
 
-export function ConnectivityColumn({ contact }: { contact: any }) {
+interface ConnectivityColumnProps {
+  contact: FooterConfig["contact"];
+}
+
+export function ConnectivityColumn({ contact }: ConnectivityColumnProps) {
   return (
     <div className="text-center md:text-left mt-10 md:mt-0">
       <h4
