@@ -26,8 +26,8 @@ export const footerConfig: FooterConfig = {
   ],
 
   contact: {
-    phone: "+91 99999 99999",
-    whatsapp: "https://wa.me/919999999999",
-    location: "Hyderabad, India",
+    phone: "+91 7563092029",
+    whatsapp: "https://wa.me/917563092029",
+    location: "India",
   },
 };
