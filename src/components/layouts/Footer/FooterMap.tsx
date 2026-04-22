@@ -18,7 +18,7 @@ export function FooterMap({ address }: { address: string }) {
         <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
       </div>
       <p
-        className="text-[11px] font-medium italic mb-6"
+        className="text-[11px] font-medium  mb-6"
         style={{ color: "var(--footer-muted)" }}
       >
         {address}

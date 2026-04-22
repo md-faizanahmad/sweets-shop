@@ -28,6 +28,6 @@ export const footerConfig: FooterConfig = {
   contact: {
     phone: "+91 7563092029",
     whatsapp: "https://wa.me/917563092029",
-    location: "India",
+    location: "Bihar India",
   },
 };

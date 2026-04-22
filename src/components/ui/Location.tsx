@@ -1,69 +1,40 @@
+// components/ui/MiniMap.tsx
 "use client";
 
 import { Navigation, MapPin } from "lucide-react";
-import { Container } from "@/components/ui/container";
 import { locationConfig } from "../layouts/config/location.config";
 
 export function Location() {
+  const { location, name, directionsUrl } = locationConfig;
+
   return (
-    <section id="location" className="py-8 md:py-16 bg-[#FAF9F6]">
-      <Container>
-        <div className="max-w-4xl mx-auto px-4">
-          {/* Header to match your screenshot style */}
-          <div className="text-center mb-10">
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400 block mb-2">
-              Our Boutique
-            </span>
-            <h2 className="text-3xl md:text-4xl font-black text-neutral-900 tracking-tight">
-              Find Our Shop
-            </h2>
-          </div>
+    <div className="relative w-full h-full group overflow-hidden">
+      {/* 1. THE MAP IFRAME */}
+      <iframe
+        title={`${name} Location`}
+        src={`https://maps.google.com/maps?q=${location.latitude},${location.longitude}&z=15&output=embed`}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full border-0 grayscale-[0.5] contrast-[1.2] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110"
+      />
 
-          {/* Minimalist Card (No Iframe) */}
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-neutral-100 border border-neutral-200 shadow-sm h-[300px] md:h-[400px] flex items-center justify-center group">
-            {/* Background Pattern/Texture to replace the map */}
-            <div
-              className="absolute inset-0 opacity-40 transition-opacity group-hover:opacity-60"
-              style={{
-                backgroundImage: `radial-gradient(#d1d1d1 1px, transparent 1px)`,
-                backgroundSize: "20px 20px",
-              }}
-            />
-
-            <div className="relative flex flex-col items-center text-center px-6">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg mb-4">
-                <MapPin className="w-8 h-8 text-orange-500" strokeWidth={1.5} />
-              </div>
-              <p className="text-neutral-500 text-sm font-medium mb-8 max-w-xs">
-                {locationConfig.address}
-              </p>
-
-              {/* Get Directions Button */}
-              <a
-                href={locationConfig.directionsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-white hover:bg-neutral-50 text-neutral-900 px-8 py-4 rounded-2xl shadow-xl transition-all active:scale-95 border border-neutral-100"
-              >
-                <Navigation className="w-4 h-4 text-orange-600 fill-orange-600" />
-                <span className="text-xs font-black uppercase tracking-widest">
-                  Get Directions
-                </span>
-              </a>
-            </div>
-          </div>
-
-          {/* Simple footer link if you want to keep the social vibe from your screenshot */}
-          <div className="flex justify-center gap-6 mt-8 text-[10px] font-bold uppercase tracking-widest text-neutral-400">
-            <span className="hover:text-neutral-900 cursor-pointer transition-colors">
-              Instagram
-            </span>
-            <span className="hover:text-neutral-900 cursor-pointer transition-colors">
-              Facebook
-            </span>
-          </div>
+      {/* 2. HOVER OVERLAY (Visible on hover/tap) */}
+      <a
+        href={directionsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute inset-0 bg-black/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-4 text-center"
+      >
+        {/* Address in Mini Map */}
+        <div className="mb-2 p-1.5 bg-white/10 rounded-full translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+          <MapPin className="w-4 h-4 text-white" />
         </div>
-      </Container>
-    </section>
+
+        {/* Action Button */}
+        <div className="flex items-center gap-2 bg-orange-600 cursor-pointer text-white px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-widest translate-y-2 group-hover:translate-y-0 transition-transform duration-300 delay-150">
+          <Navigation className="w-3 h-3 fill-current" />
+          Get Directions
+        </div>
+      </a>
+    </div>
   );
 }
