@@ -179,13 +179,13 @@ function ContactMethod({
   );
 }
 
-function SocialIcon({ icon, link }: { icon: React.ReactNode; link: string }) {
-  return (
-    <a
-      href={link}
-      className="p-3 rounded-full bg-gray-100 text-[#4c4a4a] hover:bg-(--nav-hover) hover:text-white transition-all duration-300"
-    >
-      {icon}
-    </a>
-  );
-}
+// function SocialIcon({ icon, link }: { icon: React.ReactNode; link: string }) {
+//   return (
+//     <a
+//       href={link}
+//       className="p-3 rounded-full bg-gray-100 text-[#4c4a4a] hover:bg-(--nav-hover) hover:text-white transition-all duration-300"
+//     >
+//       {icon}
+//     </a>
+//   );
+// }
