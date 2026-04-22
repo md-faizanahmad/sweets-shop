@@ -20,9 +20,9 @@ export const footerConfig: FooterConfig = {
 
   links: [
     { label: "Home", href: "/" },
-    { label: "Products", href: "#products" },
-    { label: "Location", href: "#location" },
-    { label: "Contact", href: "#contact" },
+    { label: "Products", href: "/allproducts" },
+    { label: "Our Story", href: "/our-story" },
+    { label: "Contact", href: "/contact" },
   ],
 
   contact: {
