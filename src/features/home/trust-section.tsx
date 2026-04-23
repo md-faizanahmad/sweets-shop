@@ -14,7 +14,7 @@ export function TrustSection() {
         <div className="flex flex-col items-center text-center mb-12 space-y-3">
           <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-neutral-100 shadow-sm">
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-(--footer-accent)">
-              Testimonials
+              Our Customers
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-neutral-900">
