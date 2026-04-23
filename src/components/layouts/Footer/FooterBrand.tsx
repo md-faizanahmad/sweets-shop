@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ShieldCheck } from "lucide-react";
 
 export function FooterBrand({
@@ -11,12 +10,11 @@ export function FooterBrand({
   return (
     <div className="space-y-6 text-center md:text-left">
       <div>
-        <h3
-          className="text-2xl font-black tracking-tighter"
-          style={{ color: "var(--footer-title)" }}
-        >
-          {brand}
-          <span style={{ color: "var(--footer-accent)" }}>.</span>
+        <h3 className="text-2xl font-black tracking-tighter">
+          <span className="text-xl font-bold tracking-tight transition-colors duration-300">
+            Khus<span style={{ color: "var(--nav-hover)" }}>Shop</span>
+            <span style={{ color: "var(--footer-accent)" }}>.</span>
+          </span>
         </h3>
         <p
           className="text-sm mt-4 leading-relaxed max-w-xs mx-auto md:mx-0"
