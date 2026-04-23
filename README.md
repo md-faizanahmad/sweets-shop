@@ -11,6 +11,4 @@ A modern digital menu system designed for restaurants and sweet shops to display
  ## Installation
 
 Base
-git clone https://github.com/your-username/project-name.git
-cd project-name
-npm install
+git clone https://gith
