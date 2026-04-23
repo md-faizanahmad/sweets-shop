@@ -8,7 +8,4 @@ A modern digital menu system designed for restaurants and sweet shops to display
 - Smooth animations & transitions
 - Easy customization using PPT/Canva
 
- ## Installation
-
-Base
-git clone https://gith
+ #
