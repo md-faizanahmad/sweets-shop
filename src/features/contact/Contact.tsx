@@ -107,7 +107,7 @@ export default function Contact() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-6"
+            className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 backdrop-blur-sm px-6"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
@@ -122,7 +122,7 @@ export default function Contact() {
                 Sweet Success!
               </h3>
               <p className="text-gray-500 font-medium">
-                Your message has been sent. We'll get back to you shortly.
+                Your message has been sent. We&apos;ll get back to you shortly.
               </p>
             </motion.div>
           </motion.div>

@@ -42,7 +42,7 @@ export function ProductFilter({
           w-full appearance-none bg-white border border-neutral-100 
           pl-10 pr-10 py-2.5 rounded-2xl text-[11px] font-black uppercase tracking-widest
           text-neutral-600 cursor-pointer shadow-sm
-          focus:border-[var(--nav-hover)] focus:ring-4 focus:ring-[var(--nav-hover)]/5 
+          focus:border-(--nav-hover) focus:ring-4 focus:ring-(--nav-hover)/5 
           outline-none transition-all duration-300
         "
       >
