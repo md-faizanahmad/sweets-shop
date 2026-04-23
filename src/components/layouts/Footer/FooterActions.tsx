@@ -7,7 +7,7 @@ interface FooterActionsProps {
   address: string; // e.g., "123 Sweet Lane, Mumbai"
 }
 
-export function FooterActions({ phone, address }: FooterActionsProps) {
+export function FooterActions({ address }: FooterActionsProps) {
   const handleMapClick = () => {
     const encodedAddress = encodeURIComponent(address);
     // Detects iOS to open Apple Maps specifically
