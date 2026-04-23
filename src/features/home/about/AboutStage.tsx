@@ -30,7 +30,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
 
   return (
     <div
-      className="relative flex items-center justify-center h-100 sm:h-125 lg:h-150 order-1 lg:order-2 group touch-none"
+      className="relative flex items-center justify-center h-min sm:h-125 lg:h-150 order-1 lg:order-2 group touch-none"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       // Better UX for mobile: toggle on tap
@@ -47,7 +47,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
           repeat: isHovered ? 0 : Infinity,
           ease: "easeInOut",
         }}
-        className="relative w-36 h-36 sm:w-64 sm:h-64 md:w-80 md:h-80 z-20 rounded-full overflow-hidden border-4 sm:border-8 border-white shadow-2xl"
+        className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 z-20 rounded-full overflow-hidden border-4 sm:border-8 border-white shadow-2xl"
       >
         <Image
           src={shopImage.src}
