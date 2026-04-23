@@ -159,6 +159,7 @@ export default function Navbar() {
             style={{ color: isScrolled ? "var(--nav-text)" : "#4c4a4a" }}
           >
             Khus<span style={{ color: "var(--nav-hover)" }}>Shop</span>
+            <span style={{ color: "var(--footer-accent)" }}>.</span>
           </span>
         </Link>
 

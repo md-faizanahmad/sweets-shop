@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function OurStoryPage() {
   return (
-    <main className="bg-[#FCF9F5] text-[#2D2926] overflow-x-hidden selection:bg-[#B3541E] selection:text-white">
+    <main className="bg-[#FCF9F5]  text-[#2D2926] overflow-x-hidden selection:bg-[#B3541E] selection:text-white">
       <Hero />
       <Timeline />
       <Values />
