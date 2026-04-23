@@ -54,6 +54,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
           alt={shopImage.alt}
           fill
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
         />
       </motion.div>
@@ -95,6 +96,7 @@ export function AboutStage({ shopImage, elements }: AboutStageProps) {
                   src={el.src}
                   alt={el.alt}
                   fill
+                  sizes="(max-width: 640px) 28px, (max-width: 768px) 40px, 56px"
                   className="object-contain"
                 />
               </div>
