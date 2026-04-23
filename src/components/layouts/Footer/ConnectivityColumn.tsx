@@ -42,12 +42,12 @@ export function ConnectivityColumn({ contact }: ConnectivityColumnProps) {
             className="text-sm font-medium leading-tight"
             style={{ color: "var(--footer-text)" }}
           >
-            <p>10:00 AM — 10:00 PM</p>
+            <p>10:00 AM — 09:00 PM</p>
             <p
               className="text-[9px] md:text-[10px] uppercase font-bold mt-1.5"
               style={{ color: "var(--footer-muted)" }}
             >
-              Open All 7 Days
+              Mon-Sat
             </p>
           </div>
         </li>

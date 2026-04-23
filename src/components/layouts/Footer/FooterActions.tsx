@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 interface FooterActionsProps {
   phone: string; // e.g., "+919876543210"
@@ -23,25 +23,25 @@ export function FooterActions({ phone, address }: FooterActionsProps) {
     }
   };
 
-  const handleWhatsApp = () => {
-    // Removes non-numeric characters for the API link
-    const cleanNumber = phone.replace(/\D/g, "");
-    window.open(
-      `https://wa.me/${cleanNumber}?text=Hi! I'd like to place an order.`,
-      "_blank",
-    );
-  };
+  // const handleWhatsApp = () => {
+  //   // Removes non-numeric characters for the API link
+  //   const cleanNumber = phone.replace(/\D/g, "");
+  //   window.open(
+  //     `https://wa.me/${cleanNumber}?text=Hi! I'd like to place an order.`,
+  //     "_blank",
+  //   );
+  // };
 
   return (
     <div className="flex flex-col gap-3 mt-8 w-full max-w-60 mx-auto md:mx-0">
       {/* WhatsApp Order Button */}
-      <button
+      {/* <button
         onClick={handleWhatsApp}
         className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all active:scale-95 shadow-md"
       >
         <MessageCircle className="w-4 h-4" strokeWidth={2.5} />
         ORDER ON WHATSAPP
-      </button>
+      </button> */}
 
       {/* Map Directions Button */}
       <button
