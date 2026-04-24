@@ -1,3 +1,4 @@
+import GoogleBusinessShowcase from "@/features/GoogleBusinessShowcase";
 import AboutSection from "@/features/home/about/AboutSection";
 import Hero from "@/features/home/hero";
 import { ProductsPreview } from "@/features/home/product-preview";
@@ -12,6 +13,7 @@ export default function HomePage() {
       <AboutSection />
       <VisualShowcase />
       <TrustSection />
+      <GoogleBusinessShowcase />
       {/* <Image alt="" src="/assets/g-jamun.png" width={50} height={50} /> */}
     </main>
   );
