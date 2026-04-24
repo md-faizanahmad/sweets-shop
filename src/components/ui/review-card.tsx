@@ -2,37 +2,50 @@
 
 import { Review } from "@/features/home/config/trust.config";
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Utensils, Croissant } from "lucide-react";
 
 export function ReviewCard({ review }: { review: Review }) {
+  // Logic to determine icon based on review type (if applicable)
+  const isBakery = review.category === "bakery";
+
   return (
     <motion.div
-      whileHover={{ y: -5 }}
-      className="relative p-6 rounded-4xl bg-white border border-neutral-100 shadow-xl shadow-neutral-200/40 flex flex-col"
+      whileHover={{ y: -8, transition: { duration: 0.2 } }}
+      className="relative p-8 rounded-4xl bg-white border border-orange-100/50 shadow-2xl shadow-orange-900/5 flex flex-col h-full"
     >
-      {/* Decorative Quote Icon */}
-      <Quote className="absolute top-6 right-8 w-8 h-8 text-neutral-100 z-0" />
+      {/* Category Badge */}
+      <div className="absolute -top-3 left-8 flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-100 rounded-full shadow-sm">
+        {isBakery ? (
+          <Croissant className="w-3.5 h-3.5 text-amber-600" />
+        ) : (
+          <Utensils className="w-3.5 h-3.5 text-orange-600" />
+        )}
+        <span className="text-[10px] font-bold uppercase tracking-tighter text-amber-900">
+          {isBakery ? "Freshly Baked" : "Signature Dish"}
+        </span>
+      </div>
 
-      <div className="relative z-10">
-        {/* 5 Star Rating */}
-        <div className="flex gap-1 mb-4">
+      <div className="relative z-10 pt-2">
+        {/* Rating */}
+        <div className="flex gap-0.5 mb-4">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
           ))}
         </div>
 
-        <p className="text-sm md:text-base text-neutral-600 leading-relaxed italic mb-6">
+        <p className="text-base md:text-lg text-neutral-700 leading-snug font-medium mb-8">
           &quot;{review.text}&quot;
         </p>
 
-        <div className="flex items-center gap-3 mt-auto pt-4 border-t border-neutral-50">
-          <div className="w-10 h-10 rounded-full bg-(--nav-hover) flex items-center justify-center text-white font-black text-xs">
+        <div className="flex items-center gap-4 mt-auto">
+          {/* Avatar with soft "Dough" color */}
+          <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-sm">
             {review.name.charAt(0)}
           </div>
           <div>
-            <p className="text-sm font-black text-neutral-900">{review.name}</p>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-green-600">
-              Verified Sweet Lover
+            <p className="text-sm font-bold text-neutral-900">{review.name}</p>
+            <p className="text-[11px] font-semibold text-neutral-400">
+              Verified Foodie • {review.date || "Recent Guest"}
             </p>
           </div>
         </div>

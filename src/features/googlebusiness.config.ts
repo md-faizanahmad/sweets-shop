@@ -1,8 +1,8 @@
 // features/google-business/config/googlebusiness.config.ts
 
 export const googleBusinessConfig = {
-  name: "Royal Mithai & Restaurant",
-  shortName: "RM",
+  name: "KhusShop.  ",
+  shortName: "KS",
   category: "Sweets • Restaurant • Bakery",
 
   rating: 4.8,
@@ -14,7 +14,7 @@ export const googleBusinessConfig = {
   openHours: "8:00 AM - 11:00 PM",
   directionText: "Quick Navigation",
 
-  profileUrl: "https://g.page/r/your-google-business-link",
+  profileUrl: "https://share.google/RsvnUbH0cMh4j4cby",
 
   image: {
     src: "/about-img/shop.png",
