@@ -5,12 +5,4 @@ A modern digital menu system designed for restaurants and sweet shops to display
 ##  Features
 - 4K TV-ready video menus
 - Category-based slides (Snacks, Chinese, Shakes, etc.)
-- Smooth animations & transitions
-- Easy customization using PPT/Canva
-
- ## Installation
-
-Base
-git clone https://github.com/your-username/project-name.git
-cd project-name
-npm install
+- Smooth animations & trans
