@@ -6,8 +6,9 @@ import { ReviewCard } from "@/components/ui/review-card";
 import { GoogleReviewButton } from "../GoogleReviewButton";
 
 export function Reviews() {
+  const reviewUrl = "https://g.page/r/CRMMa73YxMTbEAE/review";
   return (
-    <section className="py-16 bg-[#fcfaf8]">
+    <section className="py-10 bg-[#fcfaf8]">
       {" "}
       {/* Soft cream background */}
       <div className="max-w-7xl mx-auto px-6">
@@ -59,7 +60,21 @@ export function Reviews() {
             ))}
           </motion.div>
         </div>
-        <GoogleReviewButton url={"https://g.page/r/CRMMa73YxMTbEAE/review"} />
+        {/* Place this at the bottom of your Reviews component */}
+        <div className="mt-16 flex flex-col items-center justify-center gap-4 text-center">
+          <p className="text-neutral-500 text-sm font-medium">
+            Had a great meal or a delicious pastry?
+          </p>
+          <GoogleReviewButton url={reviewUrl} />
+
+          <div className="flex items-center gap-4 mt-2">
+            <div className="h-px w-8 bg-neutral-200" />
+            <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">
+              Trusted by 500+ Local Foodies
+            </span>
+            <div className="h-px w-8 bg-neutral-200" />
+          </div>
+        </div>
       </div>
     </section>
   );
