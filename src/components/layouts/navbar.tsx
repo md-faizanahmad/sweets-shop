@@ -202,7 +202,7 @@ export default function Navbar() {
           <motion.a
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
-            href="https://wa.me/919999999999"
+            href="https://wa.me/+917563092029"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-6 py-2 text-xs font-black uppercase tracking-widest shadow-lg transition-all duration-300"

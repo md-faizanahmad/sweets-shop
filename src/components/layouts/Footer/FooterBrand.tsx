@@ -1,7 +1,6 @@
 import { Clock, Leaf, ShieldCheck, Sparkles } from "lucide-react";
 
 export function FooterBrand({
-  brand,
   description,
 }: {
   brand: string;
