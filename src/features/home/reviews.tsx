@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { reviews } from "./config/trust.config";
 import { ReviewCard } from "@/components/ui/review-card";
+import { GoogleReviewButton } from "../GoogleReviewButton";
 
 export function Reviews() {
   return (
@@ -58,6 +59,7 @@ export function Reviews() {
             ))}
           </motion.div>
         </div>
+        <GoogleReviewButton url={"https://g.page/r/CRMMa73YxMTbEAE/review"} />
       </div>
     </section>
   );
