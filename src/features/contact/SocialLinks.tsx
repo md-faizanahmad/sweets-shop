@@ -19,7 +19,7 @@ const socials = [
   {
     name: "YouTube",
     href: "https://youtube.com",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/2/20/YouTube_2024.svg",
     color: "hover:bg-red-50",
   },
 ];
