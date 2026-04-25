@@ -7,7 +7,7 @@ const socials = [
   {
     name: "Instagram",
     href: "https://instagram.com",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg",
     color: "hover:bg-pink-50",
   },
   {

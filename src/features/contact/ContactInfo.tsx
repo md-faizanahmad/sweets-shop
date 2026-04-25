@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { Location } from "@/components/ui/Location";
 import ContactMethod from "./ContactMethod";
 import { contactConfig } from "./contact.config";
+import SocialLinks from "./SocialLinks";
 
 export default function ContactInfo() {
   return (
@@ -15,6 +16,7 @@ export default function ContactInfo() {
             {...method}
           />
         ))}
+        <SocialLinks />
       </div>
 
       <div className="rounded-3xl overflow-hidden shadow-xl border border-white">
