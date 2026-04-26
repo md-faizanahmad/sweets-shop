@@ -52,3 +52,20 @@ src/
 ├── lib/
 ├── config/
 └── styles/
+
+## GOAL
+
+To help Khus Sweets establish a strong online presence, improve customer trust, increase local discoverability, and generate more walk-ins and online orders.
+
+## Deployment
+
+This project is optimized for deployment on Vercel.
+
+## Developed By
+
+Md Faizan Ahmad
+Frontend Engineer | UI Engineer | Full Stack Developer
+
+🌐 https://agency.mdfaizanahmad.in
+
+📸 Instagram: https://www.instagram.com/webgrowth_studio
