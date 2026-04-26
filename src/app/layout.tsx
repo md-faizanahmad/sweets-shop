@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://khussweets.com"), // change to real domain
+  metadataBase: new URL("https://sweets-shop-theta.vercel.app"), // change to real domain
 
   title: {
     default: "Khus Sweets | Fresh Mithai & Cakes",
