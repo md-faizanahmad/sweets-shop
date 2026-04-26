@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sweets-shop-theta.vercel.app"), // change to real domain
+  metadataBase: new URL("https://sweets-shop-theta.vercel.app"),
 
   title: {
     default: "Khus Sweets | Fresh Mithai & Cakes",
@@ -23,45 +23,44 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Khus Sweets offers freshly made mithai, premium cakes, and traditional Indian sweets. Order online or visit our shop for authentic taste and quality.",
+    "Khus Sweets offers freshly made mithai, premium cakes, bakery items, and traditional Indian sweets. Visit us for authentic taste and quality.",
 
   keywords: [
     "Khus Sweets",
-    "Sweet shop",
-    "Mithai",
+    "Mithai Shop",
     "Indian sweets",
-    "Cakes",
+    "Cake shop",
     "Bakery",
-    "Fresh sweets",
   ],
 
   authors: [{ name: "Khus Sweets" }],
   creator: "Khus Sweets",
   publisher: "Khus Sweets",
+  category: "Food & Restaurant",
+
+  manifest: "/manifest.json",
 
   openGraph: {
     title: "Khus Sweets | Fresh Mithai & Cakes",
-    description:
-      "Premium sweets and cakes made fresh daily. Experience authentic taste at Khus Sweets.",
-    url: "https://kaverisweets.com",
+    description: "Fresh sweets, cakes and authentic mithai made daily.",
+    url: "/",
     siteName: "Khus Sweets",
+    locale: "en_IN",
+    type: "website",
     images: [
       {
-        url: "/og-image.jpg", // MUST exist in public folder
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Khus Sweets",
       },
     ],
-    locale: "en_IN",
-    type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Khus Sweets | Fresh Mithai & Cakes",
-    description:
-      "Order fresh sweets and cakes from Khus Sweets. Authentic taste, premium quality.",
+    title: "Khus Sweets",
+    description: "Fresh mithai and cakes made daily.",
     images: ["/og-image.jpg"],
   },
 
@@ -72,7 +71,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://khussweets.com",
+    canonical: "/",
   },
 
   robots: {
@@ -83,6 +82,7 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
 };
