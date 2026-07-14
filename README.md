@@ -24,7 +24,6 @@ This project combines elegant UI design with modern frontend engineering practic
 ## Tech Stack
 
 - Next.js
-- React.js
 - TypeScript
 - Tailwind CSS
 - Framer Motion
