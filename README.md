@@ -1,6 +1,6 @@
 # Khus Sweets.
 
-A modern, high-performance website built for **Khus Sweets** to showcase premium Indian sweets, cakes, bakery items, snacks, and restaurant offerings with a strong focus on branding, user experience, and SEO.
+A modern, high-performance website built for **Khus Sweets** to showcase premium Indian sweets, cakes, bakery items, snacks, and restaurant offerings with a strong focus on branding, user experience, and SEO
 
 ## Overview
 
