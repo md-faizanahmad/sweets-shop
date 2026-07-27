@@ -1,3 +1,6 @@
+<img src="https://sweets-shop-theta.vercel.app/brandIcon.png" alt />
+
+
 # Khus Sweets.
 
 A modern, high-performance website built for **Khus Sweets** to showcase premium Indian sweets, cakes, bakery items, snacks, and restaurant offerings with a strong focus on branding, user experience, and SEO
