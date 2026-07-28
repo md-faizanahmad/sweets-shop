@@ -1,4 +1,4 @@
-<img src="https://sweets-shop-theta.vercel.app/brandIcon.png" alt />
+<img src="https://sweets-shop-theta.vercel.app/brandIcon.png" alt= />
 
 
 # Khus Sweets
