@@ -3,7 +3,7 @@
   <img
 src="https://sweets-shop-theta.vercel.app/brandIcon.png"
     alt="Khus Sweets Logo"
-    width="120"
+   
   />
 
   <h1>Khus Sweets</h1>
