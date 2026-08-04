@@ -1,128 +1,91 @@
 <div align="center">
 
-  <img
-src="https://sweets-shop-theta.vercel.app/brandIcon.png"
-    alt="Khus Sweets Logo"
- />
+<img
+  src="https://sweets-shop-theta.vercel.app/brandIcon.png"
+  alt="Khus Sweets"
+  width="120"
+/>
 
-  <h1>Khus Sweets</h1>
+<h1>Khus Sweets</h1>
 
-  <p>
-    A modern, high-performance website built for <strong>Khus Sweets</strong>
-    to showcase premium Indian sweets, cakes, bakery items, snacks, and
-    restaurant offerings with a strong focus on branding, user experience,
-    and SEO.
-  </p>
+<p>
+A modern website for <strong>Khus Sweets</strong> to showcase Indian sweets,
+cakes, bakery items, snacks, and restaurant offerings with a clean design,
+fast browsing, and better online visibility.
+</p>
 
 </div>
 
-<hr />
+---
 
-<h2>🍬 Overview</h2>
+## 🍬 About
 
-<p>
-  Khus Sweets is a digital-first sweets shop website designed to help
-  customers explore products, discover offers, view menus, and connect with
-  the business across devices.
+Khus Sweets helps customers explore products, discover special offers, view the menu, and connect with the business from any device.
+
+Designed with a clean layout, smooth experience, and fast loading pages.
+
+---
+
+## ✨ Features
+
+- 🍭 Product showcase
+- 🎂 Cakes & bakery section
+- 🍽️ Restaurant menu
+- 📱 Mobile-friendly design
+- ⚡ Fast loading pages
+- 🎨 Smooth animations
+- 🔍 Search engine friendly
+- 🗺️ Sitemap & Robots.txt
+- 📍 Contact & location details
+- 🌐 Social media integration
+
+---
+
+## 🛠 Tech Stack
+
+<table>
+<tr>
+<td align="center">
+<img src="https://skillicons.dev/icons?i=nextjs" width="45"/><br>Next.js
+</td>
+<td align="center">
+<img src="https://skillicons.dev/icons?i=ts" width="45"/><br>TypeScript
+</td>
+<td align="center">
+<img src="https://skillicons.dev/icons?i=tailwind" width="45"/><br>Tailwind CSS
+</td>
+<td align="center">
+<img src="https://skillicons.dev/icons?i=vercel" width="45"/><br>Vercel
+</td>
+</tr>
+</table>
+
+<p align="center">
+<img src="https://img.shields.io/badge/Framer_Motion-Animation-0055FF?style=for-the-badge&logo=framer&logoColor=white" />
 </p>
 
-<p>
-  This project combines elegant UI design with modern frontend engineering
-  practices to create a fast, responsive, and conversion-focused web presence.
-</p>
+---
 
-<hr />
+## 📈 SEO
 
-<h2>✨ Features</h2>
+- Metadata
+- Open Graph
+- Sitemap.xml
+- Robots.txt
+- Structured Data (JSON-LD)
+- Canonical URLs
+- Mobile Friendly
+- Fast Performance
 
-<ul>
-  <li>Modern and responsive user interface</li>
-  <li>Mobile-first design approach</li>
-  <li>Premium sweets &amp; bakery brand presentation</li>
-  <li>Product and menu showcase sections</li>
-  <li>Restaurant / food service sections</li>
-  <li>SEO-optimized architecture</li>
-  <li>Sitemap, robots, metadata, and structured schema support</li>
-  <li>Fast page loads and optimized assets</li>
-  <li>Smooth animations and polished interactions</li>
-  <li>Contact and business discovery sections</li>
-</ul>
+---
 
-<hr />
+## 📁 Project Structure
 
-<h2>🚀 Tech Stack</h2>
-
-<ul>
-  <li>Next.js</li>
-  <li>TypeScript</li>
-  <li>Tailwind CSS</li>
-  <li>Framer Motion</li>
-  <li>Vercel</li>
-</ul>
-
-<hr />
-
-<h2>📈 SEO &amp; Performance</h2>
-
-<p>Built with strong technical SEO foundations:</p>
-
-<ul>
-  <li>Metadata optimization</li>
-  <li>Open Graph &amp; social sharing</li>
-  <li>Sitemap.xml</li>
-  <li>Robots.txt</li>
-  <li>Structured Data (JSON-LD)</li>
-  <li>Canonical URLs</li>
-  <li>Performance optimization</li>
-  <li>Mobile responsiveness</li>
-</ul>
-
-<hr />
-
-<h2>📁 Project Structure</h2>
-
-<pre><code>src/
+```text
+src/
 ├── app/
 ├── components/
 ├── features/
 ├── lib/
 ├── config/
 └── styles/
-</code></pre>
-
-<hr />
-
-<h2>🎯 Goal</h2>
-
-<p>
-  Help <strong>Khus Sweets</strong> establish a strong online presence,
-  improve customer trust, increase local discoverability, and generate more
-  walk-ins and online orders.
-</p>
-
-<hr />
-
-<h2>🌐 Deployment</h2>
-
-<p>Optimized for deployment on <strong>Vercel</strong>.</p>
-
-<hr />
-
-<h2>👨‍💻 Developed By</h2>
-
-<p>
-  <strong>Md Faizan Ahmad</strong><br />
-  Frontend Engineer • UI Engineer • Full Stack Developer
-</p>
-
-<p>
-  🌐
-  <a href="https://agency.mdfaizanahmad.in" target="_blank">
-    agency.mdfaizanahmad.in
-  </a>
-  <br /><br />
-  📸
-  <a href="https://www.instagram.com/webgrowth_studio" target="_blank">
-    @webgrowth_studio
-  </a>
-</p>
