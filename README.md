@@ -6,12 +6,14 @@
   width="120"
 />
 
-<h1>Khus Sweets</h1>
+# Khus Sweets
+
+A modern website for **Khus Sweets** to showcase Indian sweets, cakes, bakery items, snacks, and restaurant offerings with a clean design, fast browsing, and better online visibility.
 
 <p>
-A modern website for <strong>Khus Sweets</strong> to showcase Indian sweets,
-cakes, bakery items, snacks, and restaurant offerings with a clean design,
-fast browsing, and better online visibility.
+  <a href="https://sweets-shop-theta.vercel.app" target="_blank">
+    🌐 Live Website
+  </a>
 </p>
 
 </div>
@@ -22,46 +24,46 @@ fast browsing, and better online visibility.
 
 Khus Sweets helps customers explore products, discover special offers, view the menu, and connect with the business from any device.
 
-Designed with a clean layout, smooth experience, and fast loading pages.
+The website focuses on a clean design, fast loading pages, and a smooth browsing experience.
 
 ---
 
 ## ✨ Features
 
-- 🍭 Product showcase
-- 🎂 Cakes & bakery section
+- 🍭 Sweets collection
+- 🎂 Cakes & Bakery
 - 🍽️ Restaurant menu
 - 📱 Mobile-friendly design
-- ⚡ Fast loading pages
+- ⚡ Fast loading
 - 🎨 Smooth animations
-- 🔍 Search engine friendly
+- 🔍 SEO friendly
 - 🗺️ Sitemap & Robots.txt
 - 📍 Contact & location details
-- 🌐 Social media integration
+- 🌐 Social media links
 
 ---
 
 ## 🛠 Tech Stack
 
-<table>
+<table align="center">
 <tr>
 <td align="center">
-<img src="https://skillicons.dev/icons?i=nextjs" width="45"/><br>Next.js
+<img src="https://skillicons.dev/icons?i=nextjs" width="48"/><br>Next.js
 </td>
 <td align="center">
-<img src="https://skillicons.dev/icons?i=ts" width="45"/><br>TypeScript
+<img src="https://skillicons.dev/icons?i=ts" width="48"/><br>TypeScript
 </td>
 <td align="center">
-<img src="https://skillicons.dev/icons?i=tailwind" width="45"/><br>Tailwind CSS
+<img src="https://skillicons.dev/icons?i=tailwind" width="48"/><br>Tailwind CSS
 </td>
 <td align="center">
-<img src="https://skillicons.dev/icons?i=vercel" width="45"/><br>Vercel
+<img src="https://skillicons.dev/icons?i=vercel" width="48"/><br>Vercel
 </td>
 </tr>
 </table>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Framer_Motion-Animation-0055FF?style=for-the-badge&logo=framer&logoColor=white" />
+<img src="https://img.shields.io/badge/Framer_Motion-Animation-blue?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion"/>
 </p>
 
 ---
@@ -75,17 +77,27 @@ Designed with a clean layout, smooth experience, and fast loading pages.
 - Structured Data (JSON-LD)
 - Canonical URLs
 - Mobile Friendly
-- Fast Performance
 
 ---
 
-## 📁 Project Structure
+## 🎯 Goal
 
-```text
-src/
-├── app/
-├── components/
-├── features/
-├── lib/
-├── config/
-└── styles/
+Build a strong online presence for **Khus Sweets**, making it easier for customers to discover products, visit the store, and place orders.
+
+---
+
+## 🚀 Live Website
+
+### https://sweets-shop-theta.vercel.app
+
+---
+
+## 👤 Developer
+
+**Md Faizan Ahmad**
+
+UI Engineer • Frontend Developer • Full Stack Web Developer
+
+🌐 https://agency.mdfaizanahmad.in
+
+📸 https://instagram.com/webgrowth_studio
