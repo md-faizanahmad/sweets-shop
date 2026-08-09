@@ -6,7 +6,7 @@
   width="120"
 />
 
-# Khus Sweets
+# Khus Sweets.
 
 A modern website for **Khus Sweets** to showcase Indian sweets, cakes, bakery items, snacks, and restaurant offerings with a clean design, fast browsing, and better online visibility.
 
